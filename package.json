@@ -1,0 +1,29 @@
+{
+  "name": "force-directed",
+  "version": "1.0.0",
+  "description": "graphs",
+  "main": "index.js",
+  "scripts": {
+    "watch": "watchify graph.js -o bundle.js -v",
+    "build": "browserify graph.js -o bundle.js",
+    "go": "node_modules/.bin/http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dominic-taylor/force-directed.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dominic-taylor/force-directed/issues"
+  },
+  "homepage": "https://github.com/dominic-taylor/force-directed#readme",
+  "dependencies": {
+    "browserify": "^13.1.0",
+    "d3": "^4.2.7",
+    "http-server": "^0.9.0",
+    "watchify": "^3.7.0"
+  }
+}
