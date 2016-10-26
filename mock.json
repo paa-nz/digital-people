@@ -1,0 +1,17 @@
+{
+ "nodes":[
+         {"reference":5, "year": 0, "text":"The amount of time spent on video gaming is related negatively to academic achievement", "tags":["Academic disturbance"]},
+         {"reference":5, "year": 0, "text":"Digital addiction ranges from <1% and 38%", "tags":["Addiction"]},
+         {"reference":58, "year": 0, "text":"Patological video game play impacts negativelly academic achievement", "tags":["Addiction"]},
+         {"reference":77, "year": 2009, "text":"74% of adults have Internet access at home", "tags":["Adults"]},
+         {"reference":64, "year": 0, "text":"Apathetic users spend short times on web pages, follow no logical order, and make random selections", "tags":["Apathetic hypertext users3"]},
+         {"reference":8, "year": 0, "text":"49.8% of sessions are shorter than 5 seconds", "tags":["App usage"]}
+       ],
+ "links": [
+       {"source":0,"target":2},
+       {"source":0,"target":5},
+       {"source":1,"target":5},
+       {"source":1,"target":3},
+       {"source":1,"target":2}
+        ]
+ }
