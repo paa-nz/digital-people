@@ -1,5 +1,8 @@
 var fs  = require("fs");
-console.log('{');
+// var userFile = stdin.proecc ets
+  // Put this in the readFileSync path?
+
+console.log('{');    // assign these += to a var and += the columns below. 
 console.log(' "nodes":[');
 fs.readFileSync('./Digital Profile.tsv').toString().split('\n').forEach(function (line) {
     var columns = line.split('\t');
