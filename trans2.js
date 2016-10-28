@@ -1,4 +1,4 @@
-// This is part of the temp solution until I figure how to combine the 2 sheets worth of nodes properly. 
+// This is part of the temp solution until I figure how to combine the 2 sheets worth of nodes properly.
 
 var fs  = require("fs");
 var graphData = JSON.parse(fs.readFileSync('./byHandTemp.json', 'utf8'));
@@ -17,6 +17,13 @@ var output = graphData
     }
   }
 
+  for (var i = 0; i < graphData.nodes.length; i++) {
+    if(graphData.nodes[i].group == 1) {
+      rawLinks.push({"source": 0,"target":i})
+    }
+  }
+
+
   rawLinks.forEach(function(d){     //for each element in rawLinks, d
   	var sourceTemp = d.source;
     var targetTemp = d.target;       //take the values and assign
@@ -25,6 +32,9 @@ var output = graphData
   		d.target = sourceTemp;
   	}
   });
+
+
+
 
 function removeDups(a){
     a.sort();
@@ -44,4 +54,4 @@ var links = removeDups(rawLinks);
 
 output += JSON.stringify(output) + '"links": '+JSON.stringify(links)+'}';
 
-fs.appendFileSync("./byHandOutput.json", output);
+fs.appendFileSync("./x.json", output);

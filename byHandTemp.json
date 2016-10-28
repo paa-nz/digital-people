@@ -1,5 +1,11 @@
 {
-	"nodes": [{
+	"nodes": [
+    {
+		"group": 5,
+		"text": "Digital Profile",
+		"tags": ["People", "Digital literacy", "Digital consumption","Online skills", "Visual perception / information visualisation","Social behaviour / social networking","Social ties / social network","Cognitive processing","Social behaviour / social networking","Social ties / social network","Workplace connectivity","Quantified workplace","Electronic collaboration", "Quantified self / self-tracking","Electronic collaboration","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits", "Physical disorders","Impact of computerisation", "Diversity" ]
+	},
+    {
 		"group": 1,
 		"text": "People",
 		"tags": ["Children", "Adolescents", "Digital natives / those born in and after 1980 / generation Y / millennials", "Generation X / ages 33-72", "Netizens", "Newcomers", "Teenagers", "Adults", "Older people", "Students", "Gamers"]

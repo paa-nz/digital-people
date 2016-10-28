@@ -11,7 +11,7 @@ var svg = d3.select("svg"),
 var color = d3.scaleOrdinal(d3.schemeCategory10);
 
 
-d3.json("./byHandOutput.json", function(json) {
+d3.json("./x.json", function(json) {
   var graph = json
       console.log(graph);
       console.log(graph.nodes);
@@ -20,7 +20,7 @@ d3.json("./byHandOutput.json", function(json) {
       .force("link", d3.forceLink().id(function(d, i) {
         return i;
       }).distance(50))
-      .force("charge", d3.forceManyBody().strength(-3))
+      .force("charge", d3.forceManyBody().strength(-5))
       .force("center", d3.forceCenter(width/2, height/2));
 
   var link = svg.append("g")

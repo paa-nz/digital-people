@@ -6,3 +6,4 @@ Temporary Process: Run DigitalProfile.tsv through stanTrans.js to get nodes and 
 Run EditedTags.tsv through tags.js to get tagOutput.json, the nodes of the categories.
 Copy the category and data point nodes into a JSON file and run that through trans2.js to get the links.
 You might need a little finessing, but this data should result in a force-directed-graph-ready, data structure.
+I then added a very centre 'Digital Profile' node for the categories to be attached to. 
