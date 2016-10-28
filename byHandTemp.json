@@ -1,0 +1,2118 @@
+{
+	"nodes": [{
+		"group": 1,
+		"text": "People",
+		"tags": ["Children", "Adolescents", "Digital natives / those born in and after 1980 / generation Y / millennials", "Generation X / ages 33-72", "Netizens", "Newcomers", "Teenagers", "Adults", "Older people", "Students", "Gamers"]
+	}, {
+		"group": 1,
+		"text": "Digital literacy",
+		"tags": ["Attitude towards computer usage", "Computer anxiety", "Reading ability", "Photo-visual literacy", "Non-linear thinking / branching literacy / lateral literacy / hypermedia literacy", "Reproduction literacy / creative duplication", "Information literacy / skepticism", "Information technology fluency"]
+	}, {
+		"group": 1,
+		"text": "Digital consumption",
+		"tags": ["Web / Internet consumption", "Computer usage", "Mobile phone usage", "Emailing", "Messaging", "App usage", "TV usage", "Video and music downloading", "Job searching", "Banking", "Book consumption", "News consumption", "Online shopping", "Travel booking", "Health", "Gambling", "Gaming", "Video communication"]
+	}, {
+		"group": 1,
+		"text": "Online skills",
+		"tags": ["Cognitive style / learning style", "Knowledge seekers", "Cognitive style / learning style", "Feature explorers", "Cognitive style / learning style", "Apathetic hypertext users", "Cognitive style / learning style", "Holists", "Cognitive style / learning style", "Serialists", "Multitasking", "Motives for multitasking", "Search behaviour / information seeking behaviour", "Safety", "Cyberbullying", "Pathological Internet use", "Personality judgments"]
+	}, {
+		"group": 1,
+		"text": "Visual perception / information visualisation",
+		"tags": ["Pre-attentive vision", "Visual attention / attention skills / attentional focus / attentional resources", "Visual attention / attention skills / attentional focus / attentional resources", "Change blindness / failure to detect changes", "Visual attention / attention skills / attentional focus / attentional resources", "Inattentional blindness", "Visual attention / attention skills / attentional focus / attentional resources", "Attentional blink", "Focussed attention", "Selective attention", "Spatial orientation", "Wishful seeing", "Object visualisers (holistic)", "Spatial visualisers (analytic)"]
+	}, {
+		"group": 1,
+		"text": "Cognitive processing",
+		"tags": ["Cognitive multitasking / cognitive bottleneck", "Interruptions / fragmented work", "Awareness", "Problem solving skills / decision biases", "Skills acquisition"]
+	}, {
+		"group": 1,
+		"text": "Social ties / social network",
+		"tags": ["Belongingness", "Connectedness / friendship links", "Social propagation", "Network refresh rate", "Degree of self-disclosure", "Type of relationship"]
+	}, {
+		"group": 1,
+		"text": "Social behaviour / social networking",
+		"tags": ["Using social media", "Using social media", "Social media patterns", "Using social media", "Time spent on social media", "Using social media", "Frequency of social media use", "Using social media", "Delays posting to social media", "Using social media", "Likes", "Using social media", "Status updates", "Using social media", "Checking social media", "Contributing", "Fear of missing out", "Family rules", "Crowd / mass behaviour "]
+	}, {
+		"group": 1,
+		"text": "Workplace connectivity",
+		"tags": ["Connectivity as a form of life", "Struggling with connectivity"]
+	}, {
+		"group": 1,
+		"text": "Quantified workplace",
+		"tags": ["Workplace Internet leisure browsing"]
+	}, {
+		"group": 1,
+		"text": "Electronic collaboration",
+		"tags": ["Virtual teams", "Group processes", "Production blocking", "Group processes", "Evaluation aprehension", "Group processes", "Social loafing / effort withholding", "Group processes", "Free riding", "Productivity", "Social performance", "Decision making", "Crowdsourcing", "Videoconferencing"]
+	}, {
+		"group": 1,
+		"text": "Quantified self / self-tracking",
+		"tags": ["Motivation for self-tracking", "Biological tracking", "Physical tracking", "Behavioural tracking", "Behavioural tracking", "Cognitive performance", "Behavioural tracking", "Learning strategies", "Sexual and reproductive tracking", "Health alerts"]
+	}, {
+		"group": 1,
+		"text": "Extended self",
+		"tags": ["Avatars", "Identity", "Reputation", "Self representation", "Digital possessions"]
+	}, {
+		"group": 1,
+		"text": "Digital footprint",
+		"tags": ["Digital clutter"]
+	}, {
+		"group": 1,
+		"text": "Digital neighbourhood",
+		"tags": ["Public participation", "Urban patterns", "Telework", "Telework", "Location of work", "Telework", "Choosing to telework", "Telework", "Consequences of telework"]
+	}, {
+		"group": 1,
+		"text": "Privacy and digital surveillance",
+		"tags": []
+	}, {
+		"group": 1,
+		"text": "Personality traits",
+		"tags": ["Sleep disturbance", "Academic disturbance", "Addiction", "Self-identity", "In-group norm", "Self-reliance", "Procastination", "Self-efficacy / own perception of computer skills"]
+	}, {
+		"group": 1,
+		"text": "Physical disorders",
+		"tags": []
+	}, {
+		"group": 1,
+		"text": "Impact of computerisation",
+		"tags": []
+	}, {
+		"group": 1,
+		"text": "Diversity",
+		"tags": ["Gender differences", "Country differences", "Equity"]
+	}, {
+		"reference": 5,
+		"year": 0,
+		"text": "The amount of time spent on video gaming is related negatively to academic achievement",
+		"tags": ["Academic disturbance"]
+	}, {
+		"reference": 5,
+		"year": 0,
+		"text": "Digital addiction ranges from <1% and 38%",
+		"tags": ["Addiction"]
+	}, {
+		"reference": 58,
+		"year": 0,
+		"text": "Patological video game play impacts negativelly academic achievement",
+		"tags": ["Addiction"]
+	}, {
+		"reference": 77,
+		"year": 2009,
+		"text": "74% of adults have Internet access at home",
+		"tags": ["Adults"]
+	}, {
+		"reference": 64,
+		"year": 0,
+		"text": "Apathetic users spend short times on web pages, follow no logical order, and make random selections",
+		"tags": ["Apathetic hypertext users3"]
+	}, {
+		"reference": 8,
+		"year": 0,
+		"text": "49.8% of sessions are shorter than 5 seconds",
+		"tags": ["App usage"]
+	}, {
+		"reference": 84,
+		"year": 0,
+		"text": "Our attention is limited to information that arrives in quick succession",
+		"tags": ["Attentional blink"]
+	}, {
+		"reference": 88,
+		"year": 0,
+		"text": "Perceptual load increases attentional blink",
+		"tags": ["Attentional blink"]
+	}, {
+		"reference": 79,
+		"year": 1986,
+		"text": "Female have more negative attitude towards computer usage",
+		"tags": ["Attitude towards computer usage", "Gender differences"]
+	}, {
+		"reference": 79,
+		"year": 2005,
+		"text": "No sex differences in computer usage",
+		"tags": ["Attitude towards computer usage", "Gender differences"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "People change after spending even small amounts of time using an avatar",
+		"tags": ["Avatars"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "Regardless of the level of immersion, people are attached to their avatars",
+		"tags": ["Avatars"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "A more attractive avatar increases people's confidence and makes them act warm and social",
+		"tags": ["Avatars"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "People often have multiple avatars as a way of exploring multiple personalities",
+		"tags": ["Avatars"]
+	}, {
+		"reference": 106,
+		"year": 0,
+		"text": "Players get specially attached to their first born avatars ",
+		"tags": ["Avatars"]
+	}, {
+		"reference": 88,
+		"year": 0,
+		"text": "Perceptual load reduces awareness",
+		"tags": ["Awareness"]
+	}, {
+		"reference": 10,
+		"year": 0,
+		"text": "Social networks promote self-esteem",
+		"tags": ["Belongingness"]
+	}, {
+		"reference": 10,
+		"year": 0,
+		"text": "Social networks promote psychological well-being",
+		"tags": ["Belongingness"]
+	}, {
+		"reference": 67,
+		"year": 0,
+		"text": "Adolescents are moderate in their need for belongingness through social networking",
+		"tags": ["Belongingness"]
+	}, {
+		"reference": 68,
+		"year": 0,
+		"text": "Adults use social networking sites to connect with people from their offline lives",
+		"tags": ["Belongingness"]
+	}, {
+		"reference": 69,
+		"year": 0,
+		"text": "Social media is being used by adults as a way for them to meet belongingness needs not sufficiently met offline",
+		"tags": ["Belongingness"]
+	}, {
+		"reference": 69,
+		"year": 0,
+		"text": "Belongingness motivations are strong in agreeable individuals ",
+		"tags": ["Belongingness"]
+	}, {
+		"reference": 12,
+		"year": 0,
+		"text": "33% adults track blood sugar, blood pressure, headaches, and sleep patterns",
+		"tags": ["Biological information"]
+	}, {
+		"reference": 14,
+		"year": 0,
+		"text": "Books are used by 12% more Internet users than nonusers",
+		"tags": ["Book consumption"]
+	}, {
+		"reference": 84,
+		"year": 0,
+		"text": "An interruption in what is being seen renders us blind to significant changes that occur in the scene during the interruption",
+		"tags": ["Change blindness / failure to detect changes"]
+	}, {
+		"reference": 15,
+		"year": 0,
+		"text": "Facebook is among the most frequently checked mobile applications",
+		"tags": ["Checking social media"]
+	}, {
+		"reference": 13,
+		"year": 0,
+		"text": "88% workers would prefer to telework",
+		"tags": ["Choosing to telework"]
+	}, {
+		"reference": 13,
+		"year": 0,
+		"text": "13% workers are actually teleworking",
+		"tags": ["Choosing to telework"]
+	}, {
+		"reference": 13,
+		"year": 0,
+		"text": "Teleworking is appealing to people with disabilities",
+		"tags": ["Choosing to telework"]
+	}, {
+		"reference": 13,
+		"year": 0,
+		"text": "Emphasis of knowledge workers on teleworking",
+		"tags": ["Choosing to telework"]
+	}, {
+		"reference": 81,
+		"year": 0,
+		"text": "People have surprisingly severe limitations on their ability to carry out simultaneous tasks",
+		"tags": ["Cognitive multitasking / cognitive bottleneck"]
+	}, {
+		"reference": 82,
+		"year": 0,
+		"text": "People are unable to simultaneously perform 2 or more overlapping tasks due to a general slowing in the performace of the second task",
+		"tags": ["Cognitive multitasking / cognitive bottleneck"]
+	}, {
+		"reference": 18,
+		"year": 0,
+		"text": "Intuitive thinkers outperform others in computer training",
+		"tags": ["Cognitive style / learning style"]
+	}, {
+		"reference": 89,
+		"year": 0,
+		"text": "Holists prefer to process information in a whole-to-part sequence",
+		"tags": ["Cognitive style / learning style"]
+	}, {
+		"reference": 89,
+		"year": 0,
+		"text": "Serialists prefer to process information in a part-to-whole sequence",
+		"tags": ["Cognitive style / learning style"]
+	}, {
+		"reference": 18,
+		"year": 0,
+		"text": "People less conforming to rules are more likely to show advanced computer skills",
+		"tags": ["Computer anxiety"]
+	}, {
+		"reference": 18,
+		"year": 0,
+		"text": "Math anxiety has a negative relationship with computer skills",
+		"tags": ["Computer anxiety"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "Younger Internet users have more friends than older users",
+		"tags": ["Connectedness / friendship links"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "Extroverts have more friends on social media",
+		"tags": ["Connectedness / friendship links"]
+	}, {
+		"reference": 4,
+		"year": 0,
+		"text": "300 is the median number of friends on social media",
+		"tags": ["Connectedness / friendship links"]
+	}, {
+		"reference": 4,
+		"year": 0,
+		"text": "14.2% of facebook users have more than 350 friends",
+		"tags": ["Connectedness / friendship links"]
+	}, {
+		"reference": 94,
+		"year": 0,
+		"text": "145 is the average number of facebook friends for teenagers",
+		"tags": ["Connectedness / friendship links"]
+	}, {
+		"reference": 102,
+		"year": 2009,
+		"text": "211.4 is the average number of friends",
+		"tags": ["Connectedness / friendship links"]
+	}, {
+		"reference": 102,
+		"year": 2009,
+		"text": "152 is the median number of friends",
+		"tags": ["Connectedness / friendship links"]
+	}, {
+		"reference": 102,
+		"year": 0,
+		"text": "22% users have significant exposure to friends that are 2 or more hops away",
+		"tags": ["Connectedness / friendship links"]
+	}, {
+		"reference": 59,
+		"year": 0,
+		"text": "30% of students have been involved at lest in one form of cyber bullying ",
+		"tags": ["Cyberbullying"]
+	}, {
+		"reference": 60,
+		"year": 0,
+		"text": "25% of cyber bullying occurs in the presence of witnesses",
+		"tags": ["Cyberbullying"]
+	}, {
+		"reference": 72,
+		"year": 0,
+		"text": "Individuals who self  disclose more achieve more social support and online social well being",
+		"tags": ["Degree of self-disclosure"]
+	}, {
+		"reference": 72,
+		"year": 0,
+		"text": "People improve their psychological or mental health through revealing themselves on social networks",
+		"tags": ["Degree of self-disclosure"]
+	}, {
+		"reference": 11,
+		"year": 0,
+		"text": "People delay answering text messages by 15 to 30 minutes",
+		"tags": ["Delays posting to social media"]
+	}, {
+		"reference": 55,
+		"year": 0,
+		"text": "Older users use the search box less than younger users",
+		"tags": ["Different patterns based on age"]
+	}, {
+		"reference": 55,
+		"year": 0,
+		"text": "Younger users spend less than half the time than older users on searching the same information",
+		"tags": ["Different patterns based on age"]
+	}, {
+		"reference": 55,
+		"year": 0,
+		"text": "Frequency of internet use fills the age gap",
+		"tags": ["Different patterns based on age"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "People have fewer incentives to discard digital possessions",
+		"tags": ["Digital clutter"]
+	}, {
+		"reference": 25,
+		"year": 0,
+		"text": "78% digital natives have unlimited broadband access",
+		"tags": ["Digital natives / those born in and after 1980"]
+	}, {
+		"reference": 25,
+		"year": 0,
+		"text": "76% digital natives have unlimited access to desktop computers",
+		"tags": ["Digital natives / those born in and after 1980"]
+	}, {
+		"reference": 25,
+		"year": 0,
+		"text": "98% digital natives have unlimited access to mobile phones",
+		"tags": ["Digital natives / those born in and after 1980"]
+	}, {
+		"reference": 25,
+		"year": 0,
+		"text": "78% digital natives have unlimited access to wireless",
+		"tags": ["Digital natives / those born in and after 1980"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "72.9% digital natives have unlimited broadband access",
+		"tags": ["Digital natives / those born in and after 1980"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "89.5% digital natives have unlimited access to desktop computers",
+		"tags": ["Digital natives / those born in and after 1980"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "44.1% digital natives have unlimited access to dial-up Internet",
+		"tags": ["Digital natives / those born in and after 1980"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "47.4% digital natives have unlimited access to games consoles",
+		"tags": ["Digital natives / those born in and after 1980"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "96.4% digital natives have unlimited access to mobile phones",
+		"tags": ["Digital natives / those born in and after 1980"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "37.0% digital natives have unlimited access to wireless",
+		"tags": ["Digital natives / those born in and after 1980"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "People are attached to their digital possessions",
+		"tags": ["Digital possessions"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "People perceive their digital possessions as less authentic and with less value",
+		"tags": ["Digital possessions"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "Younger people are more likely to see digital possessions as a part of their extended self than older people",
+		"tags": ["Digital possessions"]
+	}, {
+		"reference": 53,
+		"year": 0,
+		"text": "Students whose parents have no more than a high school degree visit a lower diversity of sites than those whose parents have a graduate degree",
+		"tags": ["Diversity", "Digital literacy"]
+	}, {
+		"reference": 53,
+		"year": 0,
+		"text": "Asian Americans visit more types of sites while Hispanics visit fewer types of sites",
+		"tags": ["Country differences", "Digital literacy"]
+	}, {
+		"reference": 103,
+		"year": 2007,
+		"text": "Children from more privileged backgrounds experience greater educational gains from technology",
+		"tags": ["Advantaged and disadvantaged groups", "Digital literacy"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "People who are already advantaged gain more from technology use",
+		"tags": ["Advantaged and disadvantaged groups", "Digital literacy"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Children who have access to the Internet at home tend to spend more time online",
+		"tags": ["Advantaged and disadvantaged groups", "Digital literacy"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Internet use is associated with heightened social capital",
+		"tags": ["Advantaged and disadvantaged groups", "Digital literacy"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Internet use is associated with heightened knowledge of current events",
+		"tags": ["Digital literacy", "News consumption"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Educational background does not have a relationship with self-reported online skills",
+		"tags": ["Digital literacy"]
+	}, {
+		"reference": 95,
+		"year": 0,
+		"text": "80% of users use the Internet for email",
+		"tags": ["Emailing"]
+	}, {
+		"reference": 95,
+		"year": 0,
+		"text": "Email is the number one reason for being online",
+		"tags": ["Emailing"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Sending email is associated with higher education",
+		"tags": ["Emailing", "Diversity"]
+	}, {
+		"reference": 44,
+		"year": 0,
+		"text": "Electronic brainstorming reduces evaluation aprehension",
+		"tags": ["Evaluation aprehension"]
+	}, {
+		"reference": 11,
+		"year": 0,
+		"text": "58% kids had no rules set by parents",
+		"tags": ["Family rules"]
+	}, {
+		"reference": 11,
+		"year": 0,
+		"text": "12% parents removed phone from kids as punishment",
+		"tags": ["Family rules"]
+	}, {
+		"reference": 11,
+		"year": 0,
+		"text": "26% parents threatened kids of phone confiscation as punishment",
+		"tags": ["Family rules"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "Many people on social media continually post in order to appear active and ineresting",
+		"tags": ["Fear of missing out"]
+	}, {
+		"reference": 64,
+		"year": 0,
+		"text": "Feature explorers invest more time in understanding how the hypertext works",
+		"tags": ["Feature explorers"]
+	}, {
+		"reference": 87,
+		"year": 0,
+		"text": "Positive feelings cause the narrowing of visual attention",
+		"tags": ["Focussed attention"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "Younger Internet users use social media more frequently",
+		"tags": ["Frequency of social media use"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "Female post status updates more frequently than male",
+		"tags": ["Frequency of social media use", "Gender differences"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "Extroverts use social media more frequently",
+		"tags": ["Frequency of social media use"]
+	}, {
+		"reference": 4,
+		"year": 0,
+		"text": "50% of social media users use it several times a day",
+		"tags": ["Frequency of social media use"]
+	}, {
+		"reference": 52,
+		"year": 0,
+		"text": "18% of older adults (65 or older) that are Internet users also use social networking on a daily basis",
+		"tags": ["Frequency of social media use"]
+	}, {
+		"reference": 103,
+		"year": 2003,
+		"text": "Those with lower income are more likely to use the Internet for gambling",
+		"tags": ["Gambling", "Diversity"]
+	}, {
+		"reference": 79,
+		"year": 1986,
+		"text": "Females spend fewer hours per week using computers",
+		"tags": ["Gender differences", "Digital consumption"]
+	}, {
+		"reference": 79,
+		"year": 2005,
+		"text": "No sex differences in computer usage",
+		"tags": ["Gender differences", "Digital consumption"]
+	}, {
+		"reference": 97,
+		"year": 0,
+		"text": "Female students' primary use of computers is for communication (48% of the time)",
+		"tags": ["Gender differences", "Digital consumption"]
+	}, {
+		"reference": 97,
+		"year": 0,
+		"text": "Male students' primary use of computers is for entertainment (44% of the time)",
+		"tags": ["Gender differences", "Digital consumption"]
+	}, {
+		"reference": 103,
+		"year": 2006,
+		"text": "Men use the Web more frequently than women",
+		"tags": ["Gender differences", "Digital consumption"]
+	}, {
+		"reference": 103,
+		"year": 2006,
+		"text": "Men have higher levels of self-perceived Web-use skills than women",
+		"tags": ["Gender differences", "Digital consumption"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Female are less likely to claim knowledge of about online terminology and features",
+		"tags": ["Gender differences", "Digital consumption"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "30% of adult Internet users feel that the health information they found online helped them",
+		"tags": ["Health"]
+	}, {
+		"reference": 103,
+		"year": 2003,
+		"text": "More people go online to get news than to look for health information",
+		"tags": ["Health", "News consumption"]
+	}, {
+		"reference": 109,
+		"year": 2011,
+		"text": "8 in 10 Internet users look online for health information",
+		"tags": ["Health"]
+	}, {
+		"reference": 112,
+		"year": 0,
+		"text": "23% of women smartphone owners use mobile health apps",
+		"tags": ["Health", "Gender differences"]
+	}, {
+		"reference": 12,
+		"year": 0,
+		"text": "9% signed up for alerts",
+		"tags": ["Health alerts"]
+	}, {
+		"reference": 110,
+		"year": 0,
+		"text": "Constant alerts about health capabilities and limitations can be discomforting",
+		"tags": ["Health alerts"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "49% of all those who post online employ anonymous and pseudonymous identities",
+		"tags": ["Identity"]
+	}, {
+		"reference": 61,
+		"year": 0,
+		"text": "Computerization and automation is associated with a reduction of routine tasks and with an increase of tasks that are interactive, complex, and dynamic",
+		"tags": ["Impact of computerisation"]
+	}, {
+		"reference": 100,
+		"year": 0,
+		"text": "Workers using a computer earn 10-15% more than others",
+		"tags": ["Impact of computerisation"]
+	}, {
+		"reference": 100,
+		"year": 0,
+		"text": "Computerisation erodes wages for labour performing routine tasks",
+		"tags": ["Impact of computerisation"]
+	}, {
+		"reference": 100,
+		"year": 0,
+		"text": "High-skilled workers have moved down the occupational ladder",
+		"tags": ["Impact of computerisation"]
+	}, {
+		"reference": 100,
+		"year": 0,
+		"text": "Occupations that require subtle judgement are increasingly susceptible to computerisation",
+		"tags": ["Impact of computerisation"]
+	}, {
+		"reference": 100,
+		"year": 0,
+		"text": "Occupations that involve complex perception and manipulation tasks are harder to be substituted by computers",
+		"tags": ["Impact of computerisation"]
+	}, {
+		"reference": 100,
+		"year": 0,
+		"text": "Occupations that involve creative intelligence tasks are harder to be substituted by computers",
+		"tags": ["Impact of computerisation"]
+	}, {
+		"reference": 101,
+		"year": 0,
+		"text": "There are an increasing number of highly qualified people in elementary occupations",
+		"tags": ["Impact of computerisation"]
+	}, {
+		"reference": 101,
+		"year": 0,
+		"text": "Self-employment has increased  sharply",
+		"tags": ["Impact of computerisation"]
+	}, {
+		"reference": 101,
+		"year": 0,
+		"text": "Young adults (aged 18-24) are more likely to be temporarily employed",
+		"tags": ["Impact of computerisation"]
+	}, {
+		"reference": 10,
+		"year": 0,
+		"text": "In-group norm influences mobile phone involvement",
+		"tags": ["In-group norm"]
+	}, {
+		"reference": 84,
+		"year": 0,
+		"text": "We can fail to perceive visually salient objects if we do not attend to them",
+		"tags": ["Inattentional blindness"]
+	}, {
+		"reference": 88,
+		"year": 0,
+		"text": "Perceptual load increases inattentional blindness",
+		"tags": ["Inattentional blindness"]
+	}, {
+		"reference": 21,
+		"year": 0,
+		"text": "Socio-emotionally-literature users are willing to share data and knowkledge with others",
+		"tags": ["Information literacy / skepticism"]
+	}, {
+		"reference": 24,
+		"year": 2002,
+		"text": "Adults show a higher degree of information literacy than younger people",
+		"tags": ["Information literacy / skepticism"]
+	}, {
+		"reference": 90,
+		"year": 0,
+		"text": "34% of workers have above average spreadsheet skills in performing common workplace tasks",
+		"tags": ["Information literacy / skepticism"]
+	}, {
+		"reference": 90,
+		"year": 0,
+		"text": "67% of workers have above average word processing skills in performing common workplace tasks",
+		"tags": ["Information literacy / skepticism"]
+	}, {
+		"reference": 91,
+		"year": 0,
+		"text": "92% of young adults have online shopping skills and experience",
+		"tags": ["Information literacy / skepticism"]
+	}, {
+		"reference": 91,
+		"year": 0,
+		"text": "24% of the older adults (above 51 years) have online shopping skills and experience",
+		"tags": ["Information literacy / skepticism"]
+	}, {
+		"reference": 92,
+		"year": 2007,
+		"text": "72% of university students have knowledge of Internet applications",
+		"tags": ["Information literacy / skepticism"]
+	}, {
+		"reference": 92,
+		"year": 2007,
+		"text": "60% of students have working knowledge of office tools",
+		"tags": ["Information literacy / skepticism"]
+	}, {
+		"reference": 92,
+		"year": 2007,
+		"text": "86% teachers use search engines",
+		"tags": ["Information literacy / skepticism"]
+	}, {
+		"reference": 92,
+		"year": 2007,
+		"text": "28% teachers use subject gateways",
+		"tags": ["Information literacy / skepticism"]
+	}, {
+		"reference": 92,
+		"year": 2007,
+		"text": "22% teachers use online bibliographic databases",
+		"tags": ["Information literacy / skepticism"]
+	}, {
+		"reference": 92,
+		"year": 2007,
+		"text": "20% teachers use digital libraries",
+		"tags": ["Information literacy / skepticism"]
+	}, {
+		"reference": 96,
+		"year": 0,
+		"text": "Engineering students have an advantage in analytical skills when compared to other students ",
+		"tags": ["Information technology fluency"]
+	}, {
+		"reference": 97,
+		"year": 0,
+		"text": "58% of university students have constant computer use",
+		"tags": ["Information technology fluency"]
+	}, {
+		"reference": 97,
+		"year": 0,
+		"text": "97% of students own a computer",
+		"tags": ["Information technology fluency"]
+	}, {
+		"reference": 97,
+		"year": 0,
+		"text": "76% males believe they are fluent in information technology",
+		"tags": ["Information technology fluency", "Gender differences"]
+	}, {
+		"reference": 97,
+		"year": 0,
+		"text": "59% females believe they are fluent in information technology",
+		"tags": ["Information technology fluency", "Gender differences"]
+	}, {
+		"reference": 97,
+		"year": 0,
+		"text": "Males believe they are fluent in information technology more than female",
+		"tags": ["Information technology fluency", "Gender differences"]
+	}, {
+		"reference": 97,
+		"year": 2004,
+		"text": "45.1% of students reported their knowledge of the Internet as less than adequate",
+		"tags": ["Information technology fluency"]
+	}, {
+		"reference": 97,
+		"year": 2004,
+		"text": "10% of students reported their email ability as less than adequate",
+		"tags": ["Information technology fluency"]
+	}, {
+		"reference": 47,
+		"year": 0,
+		"text": "Mobile professionals experience on average over 4 interruptions per hour",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 47,
+		"year": 0,
+		"text": "40% of the time disrupted tasks are not resumed after interruptions",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 48,
+		"year": 0,
+		"text": "40% of tasks switches are self-initiated",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 48,
+		"year": 0,
+		"text": "14% of task switches are related to phone calls",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 48,
+		"year": 0,
+		"text": "3% of task switches are caused by email",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 49,
+		"year": 0,
+		"text": "Continuous attention to mobile devices while moving is broken down to 4-8 seconds",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 49,
+		"year": 0,
+		"text": "Attention to mobile device while moving had to be interrupted up to 8 times during a subtask",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 49,
+		"year": 0,
+		"text": "At high-level working, average in-task duration is 11.5 minutes",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 50,
+		"year": 0,
+		"text": "Information workers spend on average 3 minutes working on a task before switching to another",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 50,
+		"year": 0,
+		"text": "People work in an average of 11.7 different working spheres",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 50,
+		"year": 0,
+		"text": "57.1% of working segments were interrupted",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 50,
+		"year": 0,
+		"text": "45.3% of interruptions are due to personal work (e.g. lunch)",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 50,
+		"year": 0,
+		"text": "77% of interrupted work is resumed on the same day",
+		"tags": ["Interruptions / fragmented work"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "People who look for jobs online tend to be young adults",
+		"tags": ["Job searching"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "People who look for jobs online tend to be more highly educated",
+		"tags": ["Job searching", "Diversity"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "People who look for jobs online tend to be male",
+		"tags": ["Job searching", "Gender differences"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "People who look for jobs online tend to be unemployed",
+		"tags": ["Job searching"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "People who look for jobs online tend to have higher income",
+		"tags": ["Job searching", "Diversity"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "People who look for jobs online tend to have more computer skills",
+		"tags": ["Job searching"]
+	}, {
+		"reference": 64,
+		"year": 0,
+		"text": "Knowledge seekers are strategic, logical and systematic in acquiring information",
+		"tags": ["Knowledge seekers"]
+	}, {
+		"reference": 22,
+		"year": 0,
+		"text": "Likes are predictive of activities, attitudes and preferences",
+		"tags": ["Likes"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Those with higher income and education are less likely than those with less income and education to use instant messaging",
+		"tags": ["Messaging", "Diversity"]
+	}, {
+		"reference": 7,
+		"year": 0,
+		"text": "Extraverts receive more incoming calls",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 7,
+		"year": 0,
+		"text": "Extraverts value less incoming calls",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 9,
+		"year": 0,
+		"text": "89% of mobile users believe that people need to adopt better mobile etiquette",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 9,
+		"year": 0,
+		"text": "71% of users are now consistently late for social events because of the option to rearrange through a mobile voice call or text",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 9,
+		"year": 0,
+		"text": "78% admitted to ducking out of uncomfortable or awkward social situations by sending a text message rather than calling",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 10,
+		"year": 0,
+		"text": "Younger people have more phone use",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 11,
+		"year": 0,
+		"text": "11% young people woken every night by text or call",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 11,
+		"year": 0,
+		"text": "10% young people asked to stop using the phone late at night",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 11,
+		"year": 0,
+		"text": "86%-66% students keep them on during lessons",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 11,
+		"year": 0,
+		"text": "20% young people (1-19 years) received offensive or threatening calls or text messages",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "76.2% digital natives use mobile phone daily to call people",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "79.5% digital natives use mobile phone daily to text",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "32.2% digital natives use mobile phone daily to take photos or movies",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "8.1% digital natives use mobile phone daily to access the web",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 31,
+		"year": 0,
+		"text": "90% of individuals in developped countries have an active mobile subscription ",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 31,
+		"year": 0,
+		"text": "49% of individual in the world have an active mobile subscription ",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 86,
+		"year": 0,
+		"text": "60% of mobile users have a smart phone",
+		"tags": ["Mobile phone usage"]
+	}, {
+		"reference": 110,
+		"year": 0,
+		"text": "Self-tracking can help people feel more in control of their lives",
+		"tags": ["Motivation for self-tracking"]
+	}, {
+		"reference": 110,
+		"year": 0,
+		"text": "Putting on a self-tracking device makes people feel more atheletic",
+		"tags": ["Motivation for self-tracking"]
+	}, {
+		"reference": 110,
+		"year": 0,
+		"text": "Self-tracking changes eating habits to fit the technical requirements of tracking apps",
+		"tags": ["Motivation for self-tracking"]
+	}, {
+		"reference": 83,
+		"year": 0,
+		"text": "36% of users multitask seeking for additional information",
+		"tags": ["Motives for multitasking"]
+	}, {
+		"reference": 83,
+		"year": 0,
+		"text": "15% of users multitask to express and share opinions",
+		"tags": ["Motives for multitasking"]
+	}, {
+		"reference": 83,
+		"year": 0,
+		"text": "10.5% of users use multitasking to save time",
+		"tags": ["Motives for multitasking"]
+	}, {
+		"reference": 83,
+		"year": 0,
+		"text": "6.8% of users multitask for enjoyment (single medium is boring)",
+		"tags": ["Motives for multitasking"]
+	}, {
+		"reference": 83,
+		"year": 0,
+		"text": "6% of users multitask as a habit or routine",
+		"tags": ["Motives for multitasking"]
+	}, {
+		"reference": 66,
+		"year": 0,
+		"text": "59% of users watch TV while also using the computer to access Internet at least once per month",
+		"tags": ["Multitasking"]
+	}, {
+		"reference": 66,
+		"year": 0,
+		"text": "Individuals spend 3.1% of their time watching TV while also using a computer",
+		"tags": ["Multitasking"]
+	}, {
+		"reference": 66,
+		"year": 0,
+		"text": "40% of Internet and TV usage occurs simultaneously (people under 30)",
+		"tags": ["Multitasking"]
+	}, {
+		"reference": 66,
+		"year": 0,
+		"text": "While multitasking, people spend 68.4% of their time attending the computer and 30.4% of their time attending the TV",
+		"tags": ["Multitasking"]
+	}, {
+		"reference": 82,
+		"year": 0,
+		"text": "Off-task use of technologies is harmful to classroom performance",
+		"tags": ["Multitasking"]
+	}, {
+		"reference": 82,
+		"year": 0,
+		"text": "Facebook, because of its variety of activities, is particularly distracting in the classroom",
+		"tags": ["Multitasking"]
+	}, {
+		"reference": 85,
+		"year": 0,
+		"text": "90% of audiences multitask when they use the media",
+		"tags": ["Multitasking"]
+	}, {
+		"reference": 103,
+		"year": 2006,
+		"text": "Girls multitask more than boys",
+		"tags": ["Multitasking", "Gender differences"]
+	}, {
+		"reference": 56,
+		"year": 0,
+		"text": "Social network users mostly interact with users located within a close geographical distance",
+		"tags": ["Navigation patterns in social networks"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Netizens go online from home every day",
+		"tags": ["Netizens"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "33% of netizens are between 18-29 of age",
+		"tags": ["Netizens"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "5% of netizens are 65 years or older",
+		"tags": ["Netizens"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Netizens engage in more capital-enhancing activities online",
+		"tags": ["Netizens"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Netizens are more likely to do online banking",
+		"tags": ["Netizens"]
+	}, {
+		"reference": 71,
+		"year": 0,
+		"text": "The individual links that constitute activity network change rapidly",
+		"tags": ["Network refresh rate"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Newcomers are less likely to do online banking",
+		"tags": ["Newcomers"]
+	}, {
+		"reference": 103,
+		"year": 2003,
+		"text": "Those with higher income and education are more likely than those with less income and education to search news",
+		"tags": ["News consumption", "Diversity"]
+	}, {
+		"reference": 21,
+		"year": 0,
+		"text": "People who possess a good branching literacy also have good metaphorical thinking",
+		"tags": ["Non-linear thinking / branching literacy / lateral literacy / hypermedia literacy"]
+	}, {
+		"reference": 21,
+		"year": 0,
+		"text": "People who possess a good branching literacy also have good ability to create abstract representations",
+		"tags": ["Non-linear thinking / branching literacy / lateral literacy / hypermedia literacy"]
+	}, {
+		"reference": 21,
+		"year": 0,
+		"text": "Use of non-linear thinking improves the ability to construct knowledge",
+		"tags": ["Non-linear thinking / branching literacy / lateral literacy / hypermedia literacy"]
+	}, {
+		"reference": 63,
+		"year": 0,
+		"text": "Younger school children have a significantly higher level of branching skills when compared to adults (30-40 years)",
+		"tags": ["Non-linear thinking / branching literacy / lateral literacy / hypermedia literacy"]
+	}, {
+		"reference": 65,
+		"year": 0,
+		"text": "User performance decreases in non-linear environments, when exploring information of learning facts",
+		"tags": ["Non-linear thinking / branching literacy / lateral literacy / hypermedia literacy"]
+	}, {
+		"reference": 98,
+		"year": 0,
+		"text": "Object visualisers score lower at spatial imagery tasks",
+		"tags": ["Object visualisers (holistic)"]
+	}, {
+		"reference": 51,
+		"year": 0,
+		"text": "64.7% reported limited (one to three) symptoms of pathological Internet use",
+		"tags": ["Pathological Internet use"]
+	}, {
+		"reference": 51,
+		"year": 0,
+		"text": "8.1% reported four or more symptoms of pathological Internet use",
+		"tags": ["Pathological Internet use"]
+	}, {
+		"reference": 6,
+		"year": 0,
+		"text": "Computer-based personality judgement is more accurate than human",
+		"tags": ["Personality judgments"]
+	}, {
+		"reference": 73,
+		"year": 0,
+		"text": "Avatars assert people's identities and how they perceive others' identities",
+		"tags": ["Personality judgments"]
+	}, {
+		"reference": 21,
+		"year": 0,
+		"text": "It is easier for most users, beginners and experts alike, to learn from visual representations",
+		"tags": ["Photo-visual literacy"]
+	}, {
+		"reference": 24,
+		"year": 0,
+		"text": "Younger people (14-15 years) are the best users of photo-visual information",
+		"tags": ["Photo-visual literacy"]
+	}, {
+		"reference": 78,
+		"year": 0,
+		"text": "Students report high prevalence (41-81%) of upper extremity musculoskeletal disorders",
+		"tags": ["Physical disorders"]
+	}, {
+		"reference": 78,
+		"year": 0,
+		"text": "Computer usage longer than 20 hours has been associated with musculoskeletal disorders",
+		"tags": ["Physical disorders"]
+	}, {
+		"reference": 78,
+		"year": 0,
+		"text": "96% reported musculoskeletal symptoms of any severity at least once",
+		"tags": ["Physical disorders"]
+	}, {
+		"reference": 78,
+		"year": 0,
+		"text": "81% reported moderate or higher musculoskeletal symptoms of any severity at least once",
+		"tags": ["Physical disorders"]
+	}, {
+		"reference": 78,
+		"year": 0,
+		"text": "48% reported moderate or higher neck symptoms",
+		"tags": ["Physical disorders"]
+	}, {
+		"reference": 78,
+		"year": 0,
+		"text": "44% reported moderate or higher lower back symptoms",
+		"tags": ["Physical disorders"]
+	}, {
+		"reference": 78,
+		"year": 0,
+		"text": "40% reported moderate or higher upper back symptoms",
+		"tags": ["Physical disorders"]
+	}, {
+		"reference": 78,
+		"year": 0,
+		"text": "37% reported moderate or higher shoulders symptoms",
+		"tags": ["Physical disorders"]
+	}, {
+		"reference": 12,
+		"year": 0,
+		"text": "60% adults track weight, energy level, mood, sleep quality, or exercise",
+		"tags": ["Physical information"]
+	}, {
+		"reference": 84,
+		"year": 0,
+		"text": "At any given moment detailed vision for shape and color is only possible within a small portion of the visual field",
+		"tags": ["Pre-attentive vision"]
+	}, {
+		"reference": 84,
+		"year": 0,
+		"text": "In order to see detailed information, the eyes move rapidly, alternating between fixation and saccades",
+		"tags": ["Pre-attentive vision"]
+	}, {
+		"reference": 84,
+		"year": 0,
+		"text": "The fixation-saccade cycle repeats 3-4 times each second",
+		"tags": ["Pre-attentive vision"]
+	}, {
+		"reference": 84,
+		"year": 0,
+		"text": "A saccade takes at least 250 miliseconds to initiate",
+		"tags": ["Pre-attentive vision"]
+	}, {
+		"reference": 84,
+		"year": 0,
+		"text": "We have a limited set of visual features that are detected very rapidly by low-level, fast-acting visual processes",
+		"tags": ["Pre-attentive vision"]
+	}, {
+		"reference": 84,
+		"year": 0,
+		"text": "We often fail to notice features of a display that are not relevant to the immediate task",
+		"tags": ["Pre-attentive vision"]
+	}, {
+		"reference": 74,
+		"year": 0,
+		"text": "57% respondents favour some sort of laws regulating how personal information is collected and used",
+		"tags": ["Privacy and digital surveillance"]
+	}, {
+		"reference": 74,
+		"year": 0,
+		"text": "Users have very litle concern about what happens to their data",
+		"tags": ["Privacy and digital surveillance"]
+	}, {
+		"reference": 74,
+		"year": 0,
+		"text": "71% respondents agree that they would be very concerned about credit card information being used to rack up additional purchases",
+		"tags": ["Privacy and digital surveillance"]
+	}, {
+		"reference": 74,
+		"year": 0,
+		"text": "76% respondents agree that they would be very concerned about credit card information being used by others",
+		"tags": ["Privacy and digital surveillance"]
+	}, {
+		"reference": 74,
+		"year": 0,
+		"text": "54% respondents worry about identity theft",
+		"tags": ["Privacy and digital surveillance"]
+	}, {
+		"reference": 76,
+		"year": 0,
+		"text": "15% of online users have been subject to credit card or identity fraud",
+		"tags": ["Privacy and digital surveillance"]
+	}, {
+		"reference": 86,
+		"year": 0,
+		"text": "Power users of smartphones are less vulnerable to privacy invasion",
+		"tags": ["Privacy and digital surveillance"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "Many teenagers share their passwords with their partners",
+		"tags": ["Privacy and digital surveillance"]
+	}, {
+		"reference": 58,
+		"year": 0,
+		"text": "Frequent video gamers show more persistence when solving problems",
+		"tags": ["Problem solving skills / decision biases"]
+	}, {
+		"reference": 15,
+		"year": 0,
+		"text": "Procastrination increases academic stress and impairs well being",
+		"tags": ["Procastination"]
+	}, {
+		"reference": 15,
+		"year": 0,
+		"text": "Procastrination is linked to high levels of guilt about media use",
+		"tags": ["Procastination"]
+	}, {
+		"reference": 15,
+		"year": 0,
+		"text": "61.2% participants reported that procastinated media use conflicted with other important goals ",
+		"tags": ["Procastination"]
+	}, {
+		"reference": 15,
+		"year": 0,
+		"text": "Higher self-control decreases procastrination in media use",
+		"tags": ["Procastination"]
+	}, {
+		"reference": 15,
+		"year": 0,
+		"text": "Facebook use is a strongly habitual activity",
+		"tags": ["Procastination"]
+	}, {
+		"reference": 15,
+		"year": 0,
+		"text": "Texting is used in a highly automatic and impulsive fashion",
+		"tags": ["Procastination"]
+	}, {
+		"reference": 15,
+		"year": 0,
+		"text": "Participants who perceived Internet use as more entertaining and enjoyable also reported higher levels of procrastination",
+		"tags": ["Procastination"]
+	}, {
+		"reference": 15,
+		"year": 0,
+		"text": "Procrastination is particularly prevalent among university students",
+		"tags": ["Procastination"]
+	}, {
+		"reference": 15,
+		"year": 0,
+		"text": "Facebook seems to be a particularly prominent tool for pro- crastination among students",
+		"tags": ["Procastination"]
+	}, {
+		"reference": 15,
+		"year": 0,
+		"text": "The more frequently students procrastinated with Facebook, the more their academic stress increased",
+		"tags": ["Procastination"]
+	}, {
+		"reference": 15,
+		"year": 0,
+		"text": "Young and female facebook users are procrastinating more",
+		"tags": ["Procastination / Facebocrastination", "Gender differences"]
+	}, {
+		"reference": 44,
+		"year": 0,
+		"text": "Electronic brainstorming reduces production blocking",
+		"tags": ["Production blocking"]
+	}, {
+		"reference": 43,
+		"year": 0,
+		"text": "Remote teams use their time more productively",
+		"tags": ["Productivity"]
+	}, {
+		"reference": 43,
+		"year": 0,
+		"text": "Remote teams feel less social pressure to appear productive while being more centred on task demands",
+		"tags": ["Productivity"]
+	}, {
+		"reference": 44,
+		"year": 0,
+		"text": "Electronic tools improve group performance, particularly for creative tasks such as idea generation",
+		"tags": ["Productivity"]
+	}, {
+		"reference": 46,
+		"year": 0,
+		"text": "Electronic meetings reduce meeting time, especially in meetings involving knowledge sharing",
+		"tags": ["Productivity"]
+	}, {
+		"reference": 36,
+		"year": 0,
+		"text": "One employee can create more than 30GB of data per week based using three wearable devices",
+		"tags": ["Quantified workplace"]
+	}, {
+		"reference": 39,
+		"year": 0,
+		"text": "Mobile workers check their phones more than 150 times a day, on average",
+		"tags": ["Quantified workplace"]
+	}, {
+		"reference": 39,
+		"year": 0,
+		"text": "Each check on a mobile phone requires a sequence of actions that takes about 20 seconds",
+		"tags": ["Quantified workplace"]
+	}, {
+		"reference": 41,
+		"year": 0,
+		"text": "18% less employees because of using wearable sensors ",
+		"tags": ["Quantified workplace"]
+	}, {
+		"reference": 19,
+		"year": 0,
+		"text": "Reading ability is correlated with short-term memory performance",
+		"tags": ["Reading ability"]
+	}, {
+		"reference": 63,
+		"year": 0,
+		"text": "People with high reproduction literacy skills also have a good, synthetical and multidimensional thinking",
+		"tags": ["Reproduction literacy / creative duplication"]
+	}, {
+		"reference": 63,
+		"year": 0,
+		"text": "Adults (30-40 years) onw a significantly higher level of digital reproduction skills compared to younger school children when performing creative tasks",
+		"tags": ["Reproduction literacy / creative duplication"]
+	}, {
+		"reference": 11,
+		"year": 0,
+		"text": "77% parents could not contact children at least in one occasion",
+		"tags": ["Safety"]
+	}, {
+		"reference": 11,
+		"year": 0,
+		"text": "37% young people uneable to contact parents urgently",
+		"tags": ["Safety"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "97% students use social metworking for information seeking",
+		"tags": ["Search behaviour / information seeking behaviour"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Teens could complete information seeking tasks 55% of the time",
+		"tags": ["Search behaviour / information seeking behaviour"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Adults could complete information seeking tasks 66% of the time",
+		"tags": ["Search behaviour / information seeking behaviour"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Teens are likely to have less patience than adults when searching",
+		"tags": ["Search behaviour / information seeking behaviour"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Teens are likely to have less skills than adults when searching",
+		"tags": ["Search behaviour / information seeking behaviour"]
+	}, {
+		"reference": 103,
+		"year": 0,
+		"text": "Children between ages 9-19 lack skills in evaluating material they find online",
+		"tags": ["Search behaviour / information seeking behaviour"]
+	}, {
+		"reference": 88,
+		"year": 0,
+		"text": "Effective selective attention requires a high-level of perceptual load",
+		"tags": ["Selective attention"]
+	}, {
+		"reference": 88,
+		"year": 0,
+		"text": "Perceptual load reduces the interference of distracting stimuli",
+		"tags": ["Selective attention"]
+	}, {
+		"reference": 88,
+		"year": 0,
+		"text": "Task load increases the interference of distracting stimuli",
+		"tags": ["Selective attention"]
+	}, {
+		"reference": 10,
+		"year": 0,
+		"text": "Self-identity influences mobile phone use",
+		"tags": ["Self-identity"]
+	}, {
+		"reference": 11,
+		"year": 0,
+		"text": "Young people are becoming less self-reliant",
+		"tags": ["Self-reliance"]
+	}, {
+		"reference": 111,
+		"year": 0,
+		"text": "59% pregnant women have used a pregnancy app",
+		"tags": ["Sexual and reproductive activities"]
+	}, {
+		"reference": 111,
+		"year": 0,
+		"text": "56% of first-time mothers rated pregnancy apps as providing valuable information",
+		"tags": ["Sexual and reproductive activities"]
+	}, {
+		"reference": 111,
+		"year": 0,
+		"text": "47% of experienced mothers rated pregnancy apps as providing valuable information",
+		"tags": ["Sexual and reproductive activities"]
+	}, {
+		"reference": 111,
+		"year": 0,
+		"text": "Pregnant women used online sites and apps for pregnancy information since prenatal care was not meeting their needs",
+		"tags": ["Sexual and reproductive activities"]
+	}, {
+		"reference": 111,
+		"year": 0,
+		"text": "Pregnancy apps are viewed as important for disadvantaged women who may lack access to other educational resources",
+		"tags": ["Sexual and reproductive activities", "Advantaged and disadvantaged groups"]
+	}, {
+		"reference": 20,
+		"year": 0,
+		"text": "People organise their behaviour for a task such that the cognitive model that corresponds to this behaviour has the minimal number of states",
+		"tags": ["Skills acquisition"]
+	}, {
+		"reference": 30,
+		"year": 0,
+		"text": "People make more accurate responses as they get older ",
+		"tags": ["Skills acquisition"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "Extroverts may gain more social benefit from social networking",
+		"tags": ["Social indicators"]
+	}, {
+		"reference": 17,
+		"year": 0,
+		"text": "The majority of facebook users are more likely to be extraverted",
+		"tags": ["Social indicators"]
+	}, {
+		"reference": 43,
+		"year": 0,
+		"text": "Electronic media had no impact on social loafing",
+		"tags": ["Social loafing / effort withholding"]
+	}, {
+		"reference": 44,
+		"year": 0,
+		"text": "Anonymous participation encourages social loafing",
+		"tags": ["Social loafing / effort withholding"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "Women tend to use social media for maintaining existing relationships",
+		"tags": ["Social media patterns", "Gender differences"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "Men tend to use social media for developing new contacts",
+		"tags": ["Social media patterns", "Gender differences"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "Men tend to use social media more for task-oriented reasons and less for interpresonal purposes",
+		"tags": ["Social media patterns", "Gender differences"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "Men are more likely than women to post risky information online",
+		"tags": ["Social media patterns", "Gender differences"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "Women are more cautions online",
+		"tags": ["Social media patterns", "Gender differences"]
+	}, {
+		"reference": 102,
+		"year": 0,
+		"text": "92% of activities in social media are related to browsing",
+		"tags": ["Social media patterns"]
+	}, {
+		"reference": 102,
+		"year": 0,
+		"text": "Social media usage is higher during the day",
+		"tags": ["Social media patterns"]
+	}, {
+		"reference": 102,
+		"year": 0,
+		"text": "Social media usage is lower during the weekend",
+		"tags": ["Social media patterns"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "86% of  teens post comments on friends’ social media pages",
+		"tags": ["Social media patterns"]
+	}, {
+		"reference": 105,
+		"year": 0,
+		"text": "83% of teens comment on friends’ pictures",
+		"tags": ["Social media patterns"]
+	}, {
+		"reference": 42,
+		"year": 0,
+		"text": "The absense of face-to-face contact reduces satisfaction with teams",
+		"tags": ["Social performance"]
+	}, {
+		"reference": 42,
+		"year": 0,
+		"text": "Remote team members develop weaker sense of identity",
+		"tags": ["Social performance"]
+	}, {
+		"reference": 43,
+		"year": 0,
+		"text": "Electronic media results in teams taking longer to develop social performance",
+		"tags": ["Social performance"]
+	}, {
+		"reference": 102,
+		"year": 0,
+		"text": "There is a significant correlation between propagation in the social network and physical proximity",
+		"tags": ["Social propagation"]
+	}, {
+		"reference": 102,
+		"year": 0,
+		"text": "Content in social networks tends to spread for short distances",
+		"tags": ["Social propagation"]
+	}, {
+		"reference": 63,
+		"year": 0,
+		"text": "Readers of digital text face difficulties in knowledge construction",
+		"tags": ["Spatial orientation"]
+	}, {
+		"reference": 98,
+		"year": 0,
+		"text": "Spatial visualisers score lower at object imagery tasks",
+		"tags": ["Spatial visualisers (analytic)"]
+	}, {
+		"reference": 77,
+		"year": 2009,
+		"text": "93% of teenagers have Internet access at home",
+		"tags": ["Teenagers"]
+	}, {
+		"reference": 94,
+		"year": 2015,
+		"text": "70% of teenagers have access to a smart phone",
+		"tags": ["Teenagers"]
+	}, {
+		"reference": 94,
+		"year": 0,
+		"text": "73% of teenagers use messaging apps ",
+		"tags": ["Teenagers"]
+	}, {
+		"reference": 94,
+		"year": 0,
+		"text": "92% of teenagers go online daily and 56% do it constantly during the day",
+		"tags": ["Teenagers"]
+	}, {
+		"reference": 94,
+		"year": 0,
+		"text": "Teenagers sends and receives 30 texts per day",
+		"tags": ["Teenagers"]
+	}, {
+		"reference": 94,
+		"year": 0,
+		"text": "47% of teenagers talk with others over video connections",
+		"tags": ["Teenagers"]
+	}, {
+		"reference": 94,
+		"year": 0,
+		"text": "71% of teenagers use more than one social network site",
+		"tags": ["Teenagers"]
+	}, {
+		"reference": 94,
+		"year": 0,
+		"text": "Teenage girls are more likely to use social media while boys are more likely to play video games",
+		"tags": ["Teenagers"]
+	}, {
+		"reference": 94,
+		"year": 0,
+		"text": "81% of teenagers have or have access to a game console",
+		"tags": ["Teenagers"]
+	}, {
+		"reference": 13,
+		"year": 0,
+		"text": "No impact from part time telework",
+		"tags": ["Telework"]
+	}, {
+		"reference": 13,
+		"year": 0,
+		"text": "Telework reduces sense of belonging",
+		"tags": ["Telework"]
+	}, {
+		"reference": 3,
+		"year": 2012,
+		"text": "Female spend more time on social media than male",
+		"tags": ["Time spent on social media", "Gender differences"]
+	}, {
+		"reference": 5,
+		"year": 0,
+		"text": "11 hours (11-18 years age group) is the average time spent on social media",
+		"tags": ["Time spent on social media"]
+	}, {
+		"reference": 5,
+		"year": 0,
+		"text": "30 minutes is the average time spent per day using facebook",
+		"tags": ["Time spent on social media"]
+	}, {
+		"reference": 56,
+		"year": 0,
+		"text": "10% of all time spent on the Internet is related to social networking",
+		"tags": ["Time spent on social media"]
+	}, {
+		"reference": 102,
+		"year": 0,
+		"text": "51% of users spend no more than 10 minutes in a 12-day period",
+		"tags": ["Time spent on social media"]
+	}, {
+		"reference": 102,
+		"year": 0,
+		"text": "14% of users spend more than 1 hour in a 12-day period",
+		"tags": ["Time spent on social media"]
+	}, {
+		"reference": 102,
+		"year": 0,
+		"text": "2% of users spend more than 12 hours in a 12-day period",
+		"tags": ["Time spent on social media"]
+	}, {
+		"reference": 102,
+		"year": 0,
+		"text": "Median duration of a social media session varies between 13.4 minutes and 3 seconds",
+		"tags": ["Time spent on social media"]
+	}, {
+		"reference": 14,
+		"year": 0,
+		"text": "Internet users spend 4.6 hours a week watching TV",
+		"tags": ["TV usage"]
+	}, {
+		"reference": 14,
+		"year": 0,
+		"text": "Internet users spend 28% less time watching TV than nonusers",
+		"tags": ["TV usage"]
+	}, {
+		"reference": 66,
+		"year": 0,
+		"text": "People spend 1.64 hours per day watching TV",
+		"tags": ["TV usage"]
+	}, {
+		"reference": 13,
+		"year": 0,
+		"text": "Younger professionals desire a centralised workplace",
+		"tags": ["Urban patterns"]
+	}, {
+		"reference": 13,
+		"year": 0,
+		"text": "Importance of physical accessibility is decreasing",
+		"tags": ["Urban patterns"]
+	}, {
+		"reference": 3,
+		"year": 2011,
+		"text": "83% of Internet users aged 18-29 also use social media",
+		"tags": ["Using social media"]
+	}, {
+		"reference": 3,
+		"year": 2011,
+		"text": "70% of Internet users aged 30-49 also use social media",
+		"tags": ["Using social media"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "More female use social media than male",
+		"tags": ["Using social media", "Gender differences"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "69% female Internet users use social media",
+		"tags": ["Using social media", "Gender differences"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "60% male Internet users use social media",
+		"tags": ["Using social media", "Gender differences"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "More undergraduates use social media than graduate students",
+		"tags": ["Using social media"]
+	}, {
+		"reference": 3,
+		"year": 0,
+		"text": "Undegraduate students have more friends than graduate students",
+		"tags": ["Using social media"]
+	}, {
+		"reference": 52,
+		"year": 0,
+		"text": "34% of older adults (65 or older) that are Internet users also use social networking sites",
+		"tags": ["Using social media"]
+	}, {
+		"reference": 74,
+		"year": 0,
+		"text": "There are no notable differences by racial or ethnic group in using social media",
+		"tags": ["Using social media", "Advantaged and disadvantaged groups"]
+	}, {
+		"reference": 74,
+		"year": 0,
+		"text": "76% of social media users have a college or graduate degree",
+		"tags": ["Using social media"]
+	}, {
+		"reference": 28,
+		"year": 0,
+		"text": "Video gaming improves learning and motivation",
+		"tags": ["Video gamers"]
+	}, {
+		"reference": 28,
+		"year": 0,
+		"text": "Video gaming is more effective in adult learning",
+		"tags": ["Video gamers"]
+	}, {
+		"reference": 29,
+		"year": 0,
+		"text": "60% of adults are either regular or occasional gamers",
+		"tags": ["Video gamers"]
+	}, {
+		"reference": 29,
+		"year": 0,
+		"text": "Gamers performs better than non-gamers on measures of well-being, negative affect, and depression",
+		"tags": ["Video gamers"]
+	}, {
+		"reference": 29,
+		"year": 0,
+		"text": "Average age of gamers is 35 years",
+		"tags": ["Video gamers"]
+	}, {
+		"reference": 58,
+		"year": 0,
+		"text": "97% of adolescents (12-17 years) play computer, web, portable or console video games",
+		"tags": ["Video gamers"]
+	}, {
+		"reference": 14,
+		"year": 0,
+		"text": "Video games are used by 15% more Internet users than nonusers",
+		"tags": ["Video gaming"]
+	}, {
+		"reference": 58,
+		"year": 0,
+		"text": "31% of adolescents play video games every day",
+		"tags": ["Video gaming"]
+	}, {
+		"reference": 58,
+		"year": 0,
+		"text": "52% of adolescents play video games at least 3 days a week",
+		"tags": ["Video gaming"]
+	}, {
+		"reference": 62,
+		"year": 0,
+		"text": "Task complexity and the particular type of knowledge involved make copresence unavoidable",
+		"tags": ["Videoconferencing"]
+	}, {
+		"reference": 62,
+		"year": 0,
+		"text": "Videoconferencing is best for follow-up and information tasks",
+		"tags": ["Videoconferencing"]
+	}, {
+		"reference": 62,
+		"year": 0,
+		"text": "68% workers have access to one or more videoconferencing systems at the workplace",
+		"tags": ["Videoconferencing"]
+	}, {
+		"reference": 62,
+		"year": 0,
+		"text": "53% of videoconferencing meetings done for project work",
+		"tags": ["Videoconferencing"]
+	}, {
+		"reference": 62,
+		"year": 0,
+		"text": "21% of videoconferencing meetings done for information exchange",
+		"tags": ["Videoconferencing"]
+	}, {
+		"reference": 62,
+		"year": 0,
+		"text": "Face-to-face meetings take more than 3 times the duration of videoconferencing meetings",
+		"tags": ["Videoconferencing"]
+	}, {
+		"reference": 62,
+		"year": 0,
+		"text": "Videoconferencing is used most frequently by top and middle managers",
+		"tags": ["Videoconferencing"]
+	}, {
+		"reference": 62,
+		"year": 0,
+		"text": "Videoconferencing is preferred when participants already know each other",
+		"tags": ["Videoconferencing"]
+	}, {
+		"reference": 45,
+		"year": 0,
+		"text": "Social adaptation is very difficult to achieve in virtual teams",
+		"tags": ["Virtual teams"]
+	}, {
+		"reference": 45,
+		"year": 0,
+		"text": "Side channels are essential to improve communication in virtual teams",
+		"tags": ["Virtual teams"]
+	}, {
+		"reference": 30,
+		"year": 2006,
+		"text": "Action video games improve attentional resources",
+		"tags": ["Visual attention / attention skills / attentional focus / attentional resources"]
+	}, {
+		"reference": 30,
+		"year": 0,
+		"text": "Gamers repond faster than non-gamers but do not make more mistakes",
+		"tags": ["Visual attention / attention skills / attentional focus / attentional resources"]
+	}, {
+		"reference": 30,
+		"year": 0,
+		"text": "Expert gamers outperform non-gamers in visual attention",
+		"tags": ["Visual attention / attention skills / attentional focus / attentional resources"]
+	}, {
+		"reference": 30,
+		"year": 0,
+		"text": "Expert gamers outperform non-gamers in the number of objects that can be attended simultaneously",
+		"tags": ["Visual attention / attention skills / attentional focus / attentional resources"]
+	}, {
+		"reference": 80,
+		"year": 1984,
+		"text": "The limit of our ability to deal simultaneously with several sources of visual information is at least in part a limit on the number of separate objects that can be seen",
+		"tags": ["Visual attention / attention skills / attentional focus / attentional resources"]
+	}, {
+		"reference": 84,
+		"year": 0,
+		"text": "Attention plays a critical role in what we see",
+		"tags": ["Visual attention / attention skills / attentional focus / attentional resources"]
+	}, {
+		"reference": 99,
+		"year": 0,
+		"text": "East Asians might be capable to attend to a wider range of objects that Americans",
+		"tags": ["Visual attention / attention skills / attentional focus / attentional resources", "Country differences"]
+	}, {
+		"reference": 7,
+		"year": 0,
+		"text": "Low self-esteem has been linked with heavier amounts of Internet use",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 7,
+		"year": 0,
+		"text": "Users with high self-esteem preferred face-to-face communication",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 14,
+		"year": 0,
+		"text": "Internet users are more media connected than nonusers",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 14,
+		"year": 2000,
+		"text": "9.4 hours per week is the average use of Internet",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 14,
+		"year": 2000,
+		"text": "11 hours per week is the average use of Internet for those 25 to 35 years of age",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 14,
+		"year": 1995,
+		"text": "8% adults use the Internet",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 14,
+		"year": 2000,
+		"text": "65% adults use the Internet",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 25,
+		"year": 0,
+		"text": "63% digital natives use the web daily to access a school portal",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 25,
+		"year": 0,
+		"text": "73% digital natives use the web daily to access general information",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 25,
+		"year": 0,
+		"text": "80% digital natives use the web daily for leisure",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 25,
+		"year": 0,
+		"text": "59% digital natives use the web daily for chatting and messaging",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 25,
+		"year": 0,
+		"text": "84% digital natives use the web daily for social networking",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 25,
+		"year": 0,
+		"text": "27% digital natives use the web daily to download music",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 25,
+		"year": 0,
+		"text": "10% digital natives use the web daily to upload music",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "26.9% digital natives use the web daily to access a school portal",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "42.0% digital natives use the web daily to access general information",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "37.1% digital natives use the web daily for leisure",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "54.7% digital natives use the web daily for chatting and messaging",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "11.1% digital natives use the web daily for social networking",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "26.7% digital natives use the web daily to download music",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 27,
+		"year": 0,
+		"text": "18.3% digital natives use the web daily to upload music",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 31,
+		"year": 0,
+		"text": "47% of individuals in the world use the Internet",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 31,
+		"year": 0,
+		"text": "81% of individuals in developed countries use the Internet",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 46,
+		"year": 0,
+		"text": "More than 50% of lecturers' daily tasks are performed online",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 52,
+		"year": 0,
+		"text": "53% of older adults (65 and older) use the Internet",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 52,
+		"year": 0,
+		"text": "82% of all young adults (18 and older) use the Internet",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 52,
+		"year": 0,
+		"text": "After age 75, Internet and broadband use drop off significantly",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 66,
+		"year": 0,
+		"text": "People spend 4.15 hours per day online",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 95,
+		"year": 0,
+		"text": "Finding information is the number one or two reason for being online",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 103,
+		"year": 2004,
+		"text": "18-24 years is the most connected age group among Internet users",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 103,
+		"year": 2004,
+		"text": "86.7% of students aged 18-24 are connected to the Internet",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 103,
+		"year": 2004,
+		"text": "77% of people in the 18-24 years group go online ",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 103,
+		"year": 2006,
+		"text": "88% of people in the 18-24 years group go online ",
+		"tags": ["Web / Internet consumption"]
+	}, {
+		"reference": 87,
+		"year": 0,
+		"text": "People categorise ambiguous visual information according to a desired outcome",
+		"tags": ["Wishful seeing"]
+	}, {
+		"reference": 87,
+		"year": 0,
+		"text": "Desirable objects appear physically closer than undesirable objects",
+		"tags": ["Wishful seeing"]
+	}, {
+		"reference": 87,
+		"year": 0,
+		"text": "Perceptual estimates are influenced by psychological motives",
+		"tags": ["Wishful seeing"]
+	}, {
+		"reference": 33,
+		"year": 0,
+		"text": "Improves employee productivity",
+		"tags": ["Workplace connectivity"]
+	}, {
+		"reference": 37,
+		"year": 0,
+		"text": "Technology can have a more playful role in the workplace",
+		"tags": ["Workplace connectivity"]
+	}, {
+		"reference": 76,
+		"year": 0,
+		"text": "34% workers use social media while at work to take a mental break from their job",
+		"tags": ["Workplace connectivity"]
+	}, {
+		"reference": 76,
+		"year": 0,
+		"text": "Younger workers (18-29) are more likely to find information on social media that changes their opinion about a coworker",
+		"tags": ["Workplace connectivity"]
+	}, {
+		"reference": 76,
+		"year": 0,
+		"text": "51% of workplaces have rules about using social media while at work",
+		"tags": ["Workplace connectivity"]
+	}, {
+		"reference": 76,
+		"year": 0,
+		"text": "Workers whose workplaces have social media policy are less likely (20%) to use social media for personal reasons while on the job",
+		"tags": ["Workplace connectivity"]
+	}, {
+		"reference": 34,
+		"year": 0,
+		"text": "60% of companies had disciplined leisure browsing",
+		"tags": ["Workplace Internet leisure browsing"]
+	}, {
+		"reference": 34,
+		"year": 0,
+		"text": "30% companies had terminated employees for leisure browsing",
+		"tags": ["Workplace Internet leisure browsing"]
+	}, {
+		"reference": 34,
+		"year": 0,
+		"text": "12% or less of leisure browsing has a positive effect on employee productivity",
+		"tags": ["Workplace Internet leisure browsing"]
+	}]
+}

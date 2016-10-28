@@ -8,12 +8,10 @@ var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
-var color = d3.scaleOrdinal(d3.schemeCategory20);
+var color = d3.scaleOrdinal(d3.schemeCategory10);
 
-// Below data is being loaded but is not being found (?) by the node/link
-// d3 thing. I think I need to go through it again.
 
-d3.json("./mock.json", function(json) {
+d3.json("./byHandOutput.json", function(json) {
   var graph = json
       console.log(graph);
       console.log(graph.nodes);
@@ -21,8 +19,8 @@ d3.json("./mock.json", function(json) {
       var simulation = d3.forceSimulation()
       .force("link", d3.forceLink().id(function(d, i) {
         return i;
-      }))
-      .force("charge", d3.forceManyBody().strength(-0.5))
+      }).distance(50))
+      .force("charge", d3.forceManyBody().strength(-3))
       .force("center", d3.forceCenter(width/2, height/2));
 
   var link = svg.append("g")
@@ -38,7 +36,7 @@ d3.json("./mock.json", function(json) {
     .data(graph.nodes)
     .enter().append("circle")
       .attr("r", 5)
-    //  .attr("fill", function(d) { return color(d.year); })
+      .attr("fill", function(d) { return color(d.group); })
     .call(d3.drag()
       .on("start", dragstarted)
       .on("drag", dragged)
