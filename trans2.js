@@ -1,8 +1,10 @@
+// This is part of the temp solution until I figure how to combine the 2 sheets worth of nodes properly.
+
 var fs  = require("fs");
-var graphData = JSON.parse(fs.readFileSync('./710.json', 'utf8'));
+var graphData = JSON.parse(fs.readFileSync('./byHandTemp.json', 'utf8'));
 var rawLinks = [];
 var links = [];
-
+var output = graphData
   for (var i=0; i< graphData.nodes.length; i++){   // every node {} in the graphData
     for (var j=0; j< graphData.nodes[i].tags.length; j++){    //every node {} tags []
       for (var k=0; k< graphData.nodes.length; k++){        // every node {}
@@ -11,9 +13,16 @@ var links = [];
               rawLinks.push({"source": i,"target":k})
             }
         }
-      }       
+      }
     }
   }
+
+  for (var i = 0; i < graphData.nodes.length; i++) {
+    if(graphData.nodes[i].group == 1) {
+      rawLinks.push({"source": 0,"target":i})
+    }
+  }
+
 
   rawLinks.forEach(function(d){     //for each element in rawLinks, d
   	var sourceTemp = d.source;
@@ -23,6 +32,9 @@ var links = [];
   		d.target = sourceTemp;
   	}
   });
+
+
+
 
 function removeDups(a){
     a.sort();
@@ -37,8 +49,9 @@ function removeDups(a){
     }
 
 var links = removeDups(rawLinks);
-console.log(' "links":['  + links);
-for (var i = 0; i < links.length; i++) {
-  console.log(JSON.stringify(links[i])+",")
-}
-console.log('         ]');
+
+// output = output.replace(/}(?=[^}]*$)/, ',')
+
+output += JSON.stringify(output) + '"links": '+JSON.stringify(links)+'}';
+
+fs.appendFileSync("./x.json", output);

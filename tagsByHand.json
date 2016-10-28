@@ -1,0 +1,83 @@
+{
+	"nodes": [{
+		"group": 1,
+		"text": "People",
+		"tags": ["Children", "Adolescents", "Digital natives / those born in and after 1980 / generation Y / millennials", "Generation X / ages 33-72", "Netizens", "Newcomers", "Teenagers", "Adults", "Older people", "Students", "Gamers"]
+	}, {
+		"group": 1,
+		"text": "Digital literacy",
+		"tags": ["Attitude towards computer usage", "Computer anxiety", "Reading ability", "Photo-visual literacy", "Non-linear thinking / branching literacy / lateral literacy / hypermedia literacy", "Reproduction literacy / creative duplication", "Information literacy / skepticism", "Information technology fluency"]
+	}, {
+		"group": 1,
+		"text": "Digital consumption",
+		"tags": ["Web / Internet consumption", "Computer usage", "Mobile phone usage", "Emailing", "Messaging", "App usage", "TV usage", "Video and music downloading", "Job searching", "Banking", "Book consumption", "News consumption", "Online shopping", "Travel booking", "Health", "Gambling", "Gaming", "Video communication"]
+	}, {
+		"group": 1,
+		"text": "Online skills",
+		"tags": ["Cognitive style / learning style", "Knowledge seekers", "Cognitive style / learning style", "Feature explorers", "Cognitive style / learning style", "Apathetic hypertext users", "Cognitive style / learning style", "Holists", "Cognitive style / learning style", "Serialists", "Multitasking", "Motives for multitasking", "Search behaviour / information seeking behaviour", "Safety", "Cyberbullying", "Pathological Internet use", "Personality judgments"]
+	}, {
+		"group": 1,
+		"text": "Visual perception / information visualisation",
+		"tags": ["Pre-attentive vision", "Visual attention / attention skills / attentional focus / attentional resources", "Visual attention / attention skills / attentional focus / attentional resources", "Change blindness / failure to detect changes", "Visual attention / attention skills / attentional focus / attentional resources", "Inattentional blindness", "Visual attention / attention skills / attentional focus / attentional resources", "Attentional blink", "Focussed attention", "Selective attention", "Spatial orientation", "Wishful seeing", "Object visualisers (holistic)", "Spatial visualisers (analytic)"]
+	}, {
+		"group": 1,
+		"text": "Cognitive processing",
+		"tags": ["Cognitive multitasking / cognitive bottleneck", "Interruptions / fragmented work", "Awareness", "Problem solving skills / decision biases", "Skills acquisition"]
+	}, {
+		"group": 1,
+		"text": "Social ties / social network",
+		"tags": ["Belongingness", "Connectedness / friendship links", "Social propagation", "Network refresh rate", "Degree of self-disclosure", "Type of relationship"]
+	}, {
+		"group": 1,
+		"text": "Social behaviour / social networking",
+		"tags": ["Using social media", "Using social media", "Social media patterns", "Using social media", "Time spent on social media", "Using social media", "Frequency of social media use", "Using social media", "Delays posting to social media", "Using social media", "Likes", "Using social media", "Status updates", "Using social media", "Checking social media", "Contributing", "Fear of missing out", "Family rules", "Crowd / mass behaviour "]
+	}, {
+		"group": 1,
+		"text": "Workplace connectivity",
+		"tags": ["Connectivity as a form of life", "Struggling with connectivity"]
+	}, {
+		"group": 1,
+		"text": "Quantified workplace",
+		"tags": ["Workplace Internet leisure browsing"]
+	}, {
+		"group": 1,
+		"text": "Electronic collaboration",
+		"tags": ["Virtual teams", "Group processes", "Production blocking", "Group processes", "Evaluation aprehension", "Group processes", "Social loafing / effort withholding", "Group processes", "Free riding", "Productivity", "Social performance", "Decision making", "Crowdsourcing", "Videoconferencing"]
+	}, {
+		"group": 1,
+		"text": "Quantified self / self-tracking",
+		"tags": ["Motivation for self-tracking", "Biological tracking", "Physical tracking", "Behavioural tracking", "Behavioural tracking", "Cognitive performance", "Behavioural tracking", "Learning strategies", "Sexual and reproductive tracking", "Health alerts"]
+	}, {
+		"group": 1,
+		"text": "Extended self",
+		"tags": ["Avatars", "Identity", "Reputation", "Self representation", "Digital possessions"]
+	}, {
+		"group": 1,
+		"text": "Digital footprint",
+		"tags": ["Digital clutter"]
+	}, {
+		"group": 1,
+		"text": "Digital neighbourhood",
+		"tags": ["Public participation", "Urban patterns", "Telework", "Telework", "Location of work", "Telework", "Choosing to telework", "Telework", "Consequences of telework"]
+	}, {
+		"group": 1,
+		"text": "Privacy and digital surveillance",
+		"tags": []
+	}, {
+		"group": 1,
+		"text": "Personality traits",
+		"tags": ["Sleep disturbance", "Academic disturbance", "Addiction", "Self-identity", "In-group norm", "Self-reliance", "Procastination", "Self-efficacy / own perception of computer skills"]
+	}, {
+		"group": 1,
+		"text": "Physical disorders",
+		"tags": []
+	}, {
+		"group": 1,
+		"text": "Impact of computerisation",
+		"tags": []
+	}, {
+		"group": 1,
+		"text": "Diversity",
+		"tags": ["Gender differences", "Country differences", "Equity"]
+	}]
+}
