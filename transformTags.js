@@ -1,7 +1,8 @@
 var fs  = require("fs");
 var userFile = process.argv[2] // error handling
 
-var output = '{ "nodes":[';
+var output = '{ "nodes":[{ "group": 10, "text":"DigitalProfile", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },'
+
 var subOutput = "";
 var newLine;
 var group = 1;
@@ -57,7 +58,7 @@ var x = JSON.parse(output);
 
 output = JSON.stringify(mergeObjectsWithSameText(x))
 
-// output.push(createDigitalProfileNode(x))
+var dp = createDigitalProfileNode(x) /// work on this .
 
 output = output.replace(/}(?=[^}]*$)/, ',') // make room for links
 
@@ -68,10 +69,10 @@ function createDigitalProfileNode(data){
     var tags = []
     for (var i = 0; i < data.nodes.length; i++) {
       if(data.nodes[i].group == 1){
-        tags.push(data.nodes[i].text)
+        tags.push(JSON.stringify(data.nodes[i].text))
       }
     }
-    var DigitalProfile ='{ "group": 10, "text":"DigitalProfile", "tags":'+tags+' }'
+    var DigitalProfile ='{ "group": 10, "text":"DigitalProfile", "tags":['+tags+'] }'
     return DigitalProfile
 }
 
@@ -104,6 +105,12 @@ var rawLinks = [];
             }
         }
       }
+    }
+  }
+
+  for (var i=0; i< data.nodes.length; i++){ // perhaps adapt to other groups. 
+    if(data.nodes[i].group == 1){
+      rawLinks.push({"source": 0,"target":i})
     }
   }
   return rawLinks;
