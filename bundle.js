@@ -12,7 +12,7 @@ var svg = d3.select("svg"),
 var color = d3.scaleOrdinal(d3.schemeCategory10);
 
 
-d3.json("./x.json", function(json) {
+d3.json("./output.json", function(json) {
   var graph = json
       console.log(graph);
       console.log(graph.nodes);
