@@ -1,7 +1,7 @@
 var fs  = require("fs");
 var userFile = process.argv[2] // error handling
 
-var output = '{ "nodes":[{ "group": 10, "text":"DigitalProfile", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },'
+var output = '{ "nodes":[{ "group": 10, "text":"Digital People", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },'
 
 var subOutput = "";
 var newLine;
@@ -12,22 +12,25 @@ fs.readFileSync('./'+userFile+'').toString().trim().split('\n').forEach(function
     var tags = [];
     for(var i = 1; i<columns.length; i++) {
       columns[i] = columns[i].replace(/(\r\n|\n|\r)/gm,"")
-      if(columns[i].length>1){
-        tags.push(JSON.stringify(columns[i]))
-      }
     }
 
-    if(tags.length>1) {
-      for (var i = 0; i < tags.length; i++) { // make this recursive, a couple have sub-sub categories
-      subOutput += ' { "group": 2, "text":'+(tags[i])+', "tags":['+(tags[i+1])+'] }, '
-      tags.splice(i+1, 1)
-      }
-    }
+    // if(tags.length>1) {
+    //   for (var i = 0; i < tags.length; i++) { // make this recursive, a couple have sub-sub categories
+    //   subOutput += ' { "group": 2, "text":'+(tags[i])+', "tags":['+(tags[i+1])+'] }, '
+    //   tags.splice(i+1, 1)
+    //   }
+    // }
 
-  newLine = ' {"group": '+group+', "text":"'+(columns[0])+'", "tags":['+(tags)+'] }, ' // creates a node for catagories
-  output += newLine
+  // newLine = ' {"group": '+group+', "text":"'+(columns[0])+'", "tags":['+(tags)+'] }, ' // creates a node for catagories
+//   if(columns.length>2){
+//   subOutput += ' { "group": 2, "text":'+(columns[1])+', "tags":['+columns[2])+'] }, '
+//
+// }
+for (var i = 1; i < columns.length; i++) {
+  output += ' { "group": '+i+', "text":"'+(columns[i-1])+'", "tags":['+JSON.stringify(columns[i])+'] }, '
+}
 });
-
+console.log(output, 'HI');
 var dataPoints = ""
 fs.readFileSync('./DigitalProfile.tsv').toString().trim().split('\n').forEach(function (line) {
 
@@ -108,7 +111,7 @@ var rawLinks = [];
     }
   }
 
-  for (var i=0; i< data.nodes.length; i++){ // perhaps adapt to other groups. 
+  for (var i=0; i< data.nodes.length; i++){ // perhaps adapt to other groups.
     if(data.nodes[i].group == 1){
       rawLinks.push({"source": 0,"target":i})
     }
