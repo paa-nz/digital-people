@@ -1,36 +1,24 @@
 var fs  = require("fs");
 var userFile = process.argv[2] // error handling
 
-var output = '{ "nodes":[{ "group": 10, "text":"Digital People", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },'
-
-var subOutput = "";
-var newLine;
-var group = 1;
+var output = '{ "nodes":[{ "group": 10, "text":"Digital People", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },\n'
+var DigitalPeople = output;
 fs.readFileSync('./'+userFile+'').toString().trim().split('\n').forEach(function (line) {
     var columns = line.split('\t');
 
-    var tags = [];
     for(var i = 1; i<columns.length; i++) {
       columns[i] = columns[i].replace(/(\r\n|\n|\r)/gm,"")
     }
+    columns = columns.filter(function(entry) { return entry.trim() != ''; });
 
-    // if(tags.length>1) {
-    //   for (var i = 0; i < tags.length; i++) { // make this recursive, a couple have sub-sub categories
-    //   subOutput += ' { "group": 2, "text":'+(tags[i])+', "tags":['+(tags[i+1])+'] }, '
-    //   tags.splice(i+1, 1)
-    //   }
-    // }
+    var child; // change to parent
+    for (var i = 1; i <= columns.length; i++) {
+      !columns[i] ? child = columns[i-1] : child = columns[i]  // change this so child is the i-1 /text
+      output += ' { "group": '+i+', "text":"'+(columns[i-1])+'", "tags":['+JSON.stringify(child)+'] }, \n'
+    }
 
-  // newLine = ' {"group": '+group+', "text":"'+(columns[0])+'", "tags":['+(tags)+'] }, ' // creates a node for catagories
-//   if(columns.length>2){
-//   subOutput += ' { "group": 2, "text":'+(columns[1])+', "tags":['+columns[2])+'] }, '
-//
-// }
-for (var i = 1; i < columns.length; i++) {
-  output += ' { "group": '+i+', "text":"'+(columns[i-1])+'", "tags":['+JSON.stringify(columns[i])+'] }, '
-}
 });
-console.log(output, 'HI');
+
 var dataPoints = ""
 fs.readFileSync('./DigitalProfile.tsv').toString().trim().split('\n').forEach(function (line) {
 
@@ -47,63 +35,63 @@ fs.readFileSync('./DigitalProfile.tsv').toString().trim().split('\n').forEach(fu
       tags.push(JSON.stringify(columns[i]))
     }
   }
-
-  newLine = '{"group": 3, "reference":"'+(columns[0])+'", "year": "'+columns[1]+'", "text":"'+(columns[2])+'", "tags":['+(tags)+']},'
-  dataPoints += newLine
+  for (var i = 0; i < tags.length; i++) {
+  dataPoints += '{"group": 5, "reference":"'+(columns[0])+'", "year": "'+columns[1]+'", "text":"'+(columns[2])+'", "tags":['+(tags[i])+']},'
+  }
 })
 
-output += subOutput+dataPoints+'          ] }'
+output += dataPoints+'          ] }'
 output = output.replace(/,(?=[^,]*$)/, '') // this is a string cos it is JSON. Need to JSON.parse to use js on it.
 
 
+var x = JSON.parse(output); //Have to parse to use in JS, to remove duplicates.
 
-var x = JSON.parse(output);
+var group1 = x.nodes.filter(function(node){
+    return (node.group == 1);
+})
+var group2 = x.nodes.filter(function(node){
+    return (node.group == 2);
+})
+var group3 = x.nodes.filter(function(node){
+    return (node.group == 3);
+})
+var group5 = x.nodes.filter(function(node){
+    return (node.group == 5);
+})
+var group10 = x.nodes.filter(function(node){
+    return (node.group == 10);
+})
+group1 = merge(group1)
+group2 = merge(group2)
+group3 = merge(group3)
 
-output = JSON.stringify(mergeObjectsWithSameText(x))
+output = JSON.stringify(group10.concat(group1, group2, group3, group5)); // an array of the nodes and datapoints.
+//output = output.replace(/}(?=[^}]*$)/, ',') // make room for links, remnove }
+output = '{ "nodes": '+output+' , "links": '+JSON.stringify(createLinks(output)) +'}'
 
-var dp = createDigitalProfileNode(x) /// work on this .
-
-output = output.replace(/}(?=[^}]*$)/, ',') // make room for links
-
-output += '"links": '+JSON.stringify(createLinks(x)) +'}'
-
-function createDigitalProfileNode(data){
-
-    var tags = []
-    for (var i = 0; i < data.nodes.length; i++) {
-      if(data.nodes[i].group == 1){
-        tags.push(JSON.stringify(data.nodes[i].text))
-      }
-    }
-    var DigitalProfile ='{ "group": 10, "text":"DigitalProfile", "tags":['+tags+'] }'
-    return DigitalProfile
-}
-
-function mergeObjectsWithSameText(data) {
-  //console.log(typeof(data.nodes));
-    for (var i=1; i< data.nodes.length;)          {   // every node {} in the graphData
-      if(data.nodes[i].text === data.nodes[i-1].text){
-        for (var j = 0; j < data.nodes[i].tags.length; j++) {   // for the first nodes tags
-          data.nodes[i-1].tags.push(data.nodes[i].tags[j])    // add them to the 2nd nodes tags
+function merge(grouping) {
+    for (var i=1; i< grouping.length;)          {   // every node {} in the arr
+      if(grouping[i].text === grouping[i-1].text){
+        for (var j = 0; j < grouping[i].tags.length; j++) {   // for the first nodes tags
+          grouping[i-1].tags.push(grouping[i].tags[j])    // add them to the 2nd nodes tags
         }
-        data.nodes.splice(i, 1)     // delete the first node
+        grouping.splice(i, 1)     // delete the first node
       }else{
         i++
       }
 
-  }
-  return data
+    }
+    return grouping /// will have duplicate tags in groups, remove in links.
 }
 
-
-
-function createLinks(data){
+function createLinks(nodes){
+  nodes = JSON.parse(nodes)
 var rawLinks = [];
-  for (var i=0; i< data.nodes.length; i++){   // every node {} in the graphData
-    for (var j=0; j< data.nodes[i].tags.length; j++){    //every node {}s tags []
-      for (var k=0; k< data.nodes.length; k++){        // every node {}
-        if(i != k && data.nodes[i].group != data.nodes[k].group) { // if they are not the same node, or same group.
-            if(data.nodes[i].tags[j] == data.nodes[k].tags[j]){
+  for (var i=0; i< nodes.length; i++){   // every element
+    for (var j=0; j< nodes[i].tags.length; j++){    //every node {}s tags []
+      for (var k=0; k< nodes.length; k++){        // every node {}
+        if(i != k && nodes[i].group < nodes[k].group) { // if they are not the same node, or same group.
+            if(nodes[i].tags[j] == nodes[k].tags[j]){
               rawLinks.push({"source": i,"target":k})
             }
         }
@@ -111,12 +99,34 @@ var rawLinks = [];
     }
   }
 
-  for (var i=0; i< data.nodes.length; i++){ // perhaps adapt to other groups.
-    if(data.nodes[i].group == 1){
+  for (var i=0; i< nodes.length; i++){ // perhaps adapt to other groups.
+    if(nodes[i].group == 1){
       rawLinks.push({"source": 0,"target":i})
     }
   }
-  return rawLinks;
+  return removeDups(rawLinks); // return removeDups
 }
+
+
+function removeDups(a){ // mpt working
+  a.forEach(function(d){     //for each element in rawLinks, d
+    var sourceTemp = d.source;
+    var targetTemp = d.target;       //take the values and assign
+    if(d.source > d.target){         // if d.s > d.t
+      d.source = targetTemp;          // assign d.t to d.target
+      d.target = sourceTemp;
+    }
+  });
+
+  a.sort();
+  for(var i = 1; i < a.length; ){
+      if(a[i-1].source == a[i].source && a[i-1].target == a[i].target){
+          a.splice(i, 1);
+          } else {
+          i++;
+          }
+      }
+  return a;
+  }
 
 fs.appendFileSync("./output.json", output);
