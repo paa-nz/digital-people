@@ -44,7 +44,7 @@ d3.json("./output.json", function(json) {
       .on("end", dragended));
 
     node.append("title")
-      .text(function(d) {return d.text });
+      .text(function(d) {return d.group+ ' '+ d.text });
 
     simulation
       .nodes(graph.nodes)

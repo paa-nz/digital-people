@@ -36,7 +36,7 @@ fs.readFileSync('./DigitalProfile.tsv').toString().trim().split('\n').forEach(fu
     }
   }
   for (var i = 0; i < tags.length; i++) {
-  dataPoints += '{"group": 5, "reference":"'+(columns[0])+'", "year": "'+columns[1]+'", "text":"'+(columns[2])+'", "tags":['+(tags[i])+']},'
+  dataPoints += '{"group": 5, "text":"'+(columns[2])+'", "reference":"'+(columns[0])+'", "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
   }
 })
 
@@ -66,6 +66,7 @@ group2 = merge(group2)
 group3 = merge(group3)
 
 output = JSON.stringify(group10.concat(group1, group2, group3, group5)); // an array of the nodes and datapoints.
+
 //output = output.replace(/}(?=[^}]*$)/, ',') // make room for links, remnove }
 output = '{ "nodes": '+output+' , "links": '+JSON.stringify(createLinks(output)) +'}'
 
@@ -86,13 +87,13 @@ function merge(grouping) {
 
 function createLinks(nodes){
   nodes = JSON.parse(nodes)
-var rawLinks = [];
+  var rawLinks = [];
   for (var i=0; i< nodes.length; i++){   // every element
     for (var j=0; j< nodes[i].tags.length; j++){    //every node {}s tags []
-      for (var k=0; k< nodes.length; k++){        // every node {}
-        if(i != k && nodes[i].group < nodes[k].group) { // if they are not the same node, or same group.
-            if(nodes[i].tags[j] == nodes[k].tags[j]){
-              rawLinks.push({"source": i,"target":k})
+      for (var k=0; k< nodes.length; k++){          // every node {}
+        if(nodes[i].tags[j] == nodes[k].text) { // if they are not the same node, or same group.
+            if(nodes[i].group != nodes[k].group){
+              rawLinks.push({"source": i,"target":k, "tname": nodes[i].text, "tsrc": nodes[k].text })
             }
         }
       }
