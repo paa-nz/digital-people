@@ -92,12 +92,13 @@ d3.json("./output.json", function(json) {
 
   function addNodes(node) {
     //findParents(node)
+    console.log(node.tags);
     if(node.group != 5) {
       dataList.innerHTML += '<li>'+node.text+'</li>'
     }else{
       var year = ''
       if(node.year>1) year = node.year;
-      dataList.innerHTML += '<li>'+node.text+' ('+node.tags[0]+') ['+node.reference+'] '+year+' </li>'
+      dataList.innerHTML += '<li><i>'+node.tags[0]+'</i>: <br> '+node.text+'  ['+node.reference+'] '+year+' </li>'
     }
   }
 })

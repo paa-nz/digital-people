@@ -41,7 +41,7 @@ fs.readFileSync('./DigitalProfile.tsv').toString().trim().split('\n').forEach(fu
 })
 
 output += dataPoints+'          ] }'
-// output = output.replace(/,(?=[^,]*$)/, '')
+output = output.replace(/,(?=[^,]*$)/, '')
 
 var x = JSON.parse(output); //Have to parse to use in JS, to remove duplicates.
 
