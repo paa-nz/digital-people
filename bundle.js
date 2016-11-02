@@ -2,6 +2,8 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 var d3 = require("d3");
 
+var dataList = document.getElementById('data');
+
 var graph
 var radius = 6;
 //Append a SVG to the body of the html page. Assign this SVG as an object to svg
@@ -18,7 +20,8 @@ d3.json("./output.json", function(json) {
       console.log(graph);
       console.log(graph.nodes);
 
-      var simulation = d3.forceSimulation()
+      var simulation =
+      d3.forceSimulation()
       .force("link", d3.forceLink().id(function(d, i) {
         return i;
       }).distance(50))
@@ -45,7 +48,14 @@ d3.json("./output.json", function(json) {
       .on("end", dragended));
 
     node.append("title")
-      .text(function(d) {return d.group+ ' '+ d.text });
+      .text(function(d) {return d.group+ ' '+ d.text})
+      .style("text-anchor", "middle")
+      .style("fill", "#555")
+      .style("font-family", "Arial")
+      .style("font-size", 24);
+
+      d3.selectAll("circle")
+          .on("click", function(d,i) { addNodes( d ); }) // change () to add text etc to div
 
     simulation
       .nodes(graph.nodes)
@@ -54,10 +64,7 @@ d3.json("./output.json", function(json) {
     simulation.force("link")
       .links(graph.links);
 
-
-
   function ticked() {
-
     link
         .attr("x1", function(d) {return d.source.x; })
         .attr("y1", function(d) {return d.source.y; })
@@ -68,7 +75,6 @@ d3.json("./output.json", function(json) {
         .attr("cx", function(d) {return d.x  })
         .attr("cy", function(d) {return d.y; });
   }
-
 
   function dragstarted(d) {
       if(!d3.event.active) simulation.alphaTarget(0.3).restart();
@@ -83,7 +89,11 @@ d3.json("./output.json", function(json) {
       if(!d3.event.active) simulation.alphaTarget(0);
       d.fx = null;
       d.fy = null;
-}
+  }
+
+  function addNodes(node) {
+    dataList.innerHTML += '<li>'+node.text+'</li>'
+  }
 })
 });
 
