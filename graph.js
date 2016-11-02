@@ -91,7 +91,14 @@ d3.json("./output.json", function(json) {
   }
 
   function addNodes(node) {
-    dataList.innerHTML += '<li>'+node.text+'</li>'
+    //findParents(node)
+    if(node.group != 5) {
+      dataList.innerHTML += '<li>'+node.text+'</li>'
+    }else{
+      var year = ''
+      if(node.year>1) year = node.year;
+      dataList.innerHTML += '<li>'+node.text+' ('+node.tags[0]+') ['+node.reference+'] '+year+' </li>'
+    }
   }
 })
 });

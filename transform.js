@@ -13,7 +13,7 @@ fs.readFileSync('./'+userFile+'').toString().trim().split('\n').forEach(function
 
     var child; // change to parent
     for (var i = 1; i <= columns.length; i++) {
-      !columns[i] ? child = columns[i-1] : child = columns[i]  // change this so child is the i-1 /text
+      !columns[i] ? child = columns[i-1] : child = columns[i]
       output += ' { "group": '+i+', "text":"'+(columns[i-1])+'", "tags":['+JSON.stringify(child)+'] }, \n'
     }
 
@@ -41,8 +41,7 @@ fs.readFileSync('./DigitalProfile.tsv').toString().trim().split('\n').forEach(fu
 })
 
 output += dataPoints+'          ] }'
-output = output.replace(/,(?=[^,]*$)/, '') // this is a string cos it is JSON. Need to JSON.parse to use js on it.
-
+// output = output.replace(/,(?=[^,]*$)/, '')
 
 var x = JSON.parse(output); //Have to parse to use in JS, to remove duplicates.
 
@@ -67,7 +66,6 @@ group3 = merge(group3)
 
 output = JSON.stringify(group10.concat(group1, group2, group3, group5)); // an array of the nodes and datapoints.
 
-//output = output.replace(/}(?=[^}]*$)/, ',') // make room for links, remnove }
 output = '{ "nodes": '+output+' , "links": '+JSON.stringify(createLinks(output)) +'}'
 
 function merge(grouping) {
@@ -93,7 +91,7 @@ function createLinks(nodes){
       for (var k=0; k< nodes.length; k++){          // every node {}
         if(nodes[i].tags[j] == nodes[k].text) { // if they are not the same node, or same group.
             if(nodes[i].group != nodes[k].group){
-              rawLinks.push({"source": i,"target":k, "tname": nodes[i].text, "tsrc": nodes[k].text })
+              rawLinks.push({"source": i,"target":k, "srcName": nodes[i].text, "trgName": nodes[k].text })
             }
         }
       }
@@ -109,7 +107,7 @@ function createLinks(nodes){
 }
 
 
-function removeDups(a){ // mpt working
+function removeDups(a){ // possible not any actual duplicates.
   a.forEach(function(d){     //for each element in rawLinks, d
     var sourceTemp = d.source;
     var targetTemp = d.target;       //take the values and assign
