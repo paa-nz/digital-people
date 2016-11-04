@@ -24,8 +24,8 @@ d3.json("./output.json", function(json) {
       d3.forceSimulation()
       .force("link", d3.forceLink().id(function(d, i) {
         return i;
-      }).distance(50))
-      .force("charge", d3.forceManyBody().strength(-5))
+      }).distance(10))
+      .force("charge", d3.forceManyBody().strength(-30))
       .force("center", d3.forceCenter(width/2, height/2));
 
   var link = svg.append("g")
@@ -48,14 +48,13 @@ d3.json("./output.json", function(json) {
       .on("end", dragended));
 
     node.append("title")
-      .text(function(d) {return d.group+ ' '+ d.text})
+      .text(function(d) {return d.text})
       .style("text-anchor", "middle")
-      .style("fill", "#555")
-      .style("font-family", "Arial")
-      .style("font-size", 24);
+
 
       d3.selectAll("circle")
           .on("click", function(d,i) { addNodes( d ); }) // change () to add text etc to div
+          //, on (mouseOver)etc
 
     simulation
       .nodes(graph.nodes)
@@ -99,7 +98,7 @@ d3.json("./output.json", function(json) {
     }else{
       var year = ''
       if(node.year>1) year = node.year;
-      dataList.innerHTML += '<li><i>'+node.tags[0]+'</i>: <br> '+node.text+'  ['+node.reference+'] '+year+' </li>'
+      dataList.innerHTML += '<li>'+node.text+' <i>'+node.tags[0]+'</i>: <br>  ['+node.reference+'] '+year+' </li>'
     }
   }
 })
