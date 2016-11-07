@@ -22,11 +22,11 @@ d3.json("./output.json", function(json) {
 
       var simulation =
       d3.forceSimulation()
-      .force("link", d3.forceLink().id(function(d, i) {
-        return i;
-      }).distance(10))
-      .force("charge", d3.forceManyBody().strength(-30))
-      .force("center", d3.forceCenter(width/2, height/2));
+      .force("charge", d3.forceManyBody().strength(-50))
+      .force("link", d3.forceLink().id(function(d, i) { return i;}).distance(20).strength(0.9))
+      .force("center", d3.forceCenter(width/2, height/2))
+      .force('X', d3.forceX(width/2).strength(0.1)) // retuirnx 100 d,group
+      .force('Y', d3.forceY(height/2).strength(0.1));
 
   var link = svg.append("g")
     .attr("class", "links")
