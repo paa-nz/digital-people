@@ -1,8 +1,52 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 var d3 = require("d3");
-
 var dataList = document.getElementById('data');
 
+document.getElementById("toggleRefs").addEventListener("click", toggleDisplay);
+document.getElementById("toggleTags").addEventListener("click", toggleDisplay);
+document.getElementById("clearData").addEventListener("click", function() {
+  document.getElementById("data").innerHTML = "";
+});
+
+var tagsVisible = true;
+var refsVisible = true;
+
+function toggleDisplay(e) {
+  if(e.target.id=="toggleTags"){
+    tagsSwitch(tagsVisible)
+  }
+  if(e.target.id=="toggleRefs"){
+    refsSwitch(refsVisible)
+  }
+}
+function tagsSwitch(visible) { // consider using classList in refactor to add/remove class rather than attr of class
+  var tags = document.getElementsByClassName('tags')
+   if(visible){
+    for (var i = 0; i < tags.length; i++) {
+      tags[i].style.display = 'none'
+    }
+    tagsVisible = false;
+   }else {
+     for (var i = 0; i < tags.length; i++) {
+       tags[i].style.display = 'block'
+     }
+     tagsVisible = true;
+   }
+}
+ function refsSwitch(visible) {
+   var refs = document.getElementsByClassName('refs')
+    if(visible){
+     for (var i = 0; i < refs.length; i++) {
+       refs[i].style.display = 'none'
+     }
+     refsVisible = false;
+    }else {
+      for (var i = 0; i < refs.length; i++) {
+        refs[i].style.display = 'block'
+      }
+      refsVisible = true;
+    }
+ }
 var graph
 var radius = 6;
 //Append a SVG to the body of the html page. Assign this SVG as an object to svg
@@ -24,8 +68,8 @@ d3.json("./output.json", function(json) {
       .force("charge", d3.forceManyBody().strength(-50))
       .force("link", d3.forceLink().id(function(d, i) { return i;}).distance(20).strength(0.9))
       .force("center", d3.forceCenter(width/2, height/2))
-      .force('X', d3.forceX(width/2).strength(0.1)) // retuirnx 100 d,group
-      .force('Y', d3.forceY(height/2).strength(0.1));
+      .force('X', d3.forceX(width/2).strength(0.15)) // retuirnx 100 d,group
+      .force('Y', d3.forceY(height/2).strength(0.15));
 
   var link = svg.append("g")
     .attr("class", "links")
@@ -52,8 +96,8 @@ d3.json("./output.json", function(json) {
 
 
       d3.selectAll("circle")
-          .on("click", function(d,i) { addNodes( d ); }) // change () to add text etc to div
-          //, on (mouseOver)etc
+          .on("click", function(d,i) { addNodes( d ); }) // plus change look of node so know it is selected. 
+          //, on (mouseOver) create tooltip-like div, with name of datapoint, plus highlight edges towards centre.
 
     simulation
       .nodes(graph.nodes)
@@ -97,8 +141,13 @@ d3.json("./output.json", function(json) {
     }else{
       var year = ''
       if(node.year>1) year = node.year;
-      dataList.innerHTML += '<li>'+node.text+' <i>'+node.tags[0]+'</i>: <br>  ['+node.reference+'] '+year+' </li>'
+      dataList.innerHTML += '<li> <p>'+node.text+'</p> <i class="tags">'+node.tags[0]+':</i> <p class="refs">['+node.reference+'] '+year+' </p></li>'
     }
   }
 })
+
+
+
+
+
 });

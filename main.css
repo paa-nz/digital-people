@@ -1,3 +1,8 @@
+body{
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
 .links line {
   stroke: #999;
   stroke-opacity: 0.6;
@@ -8,27 +13,41 @@
   stroke: #fff;
   stroke-width: 1.5px;
 }
+.refs {
+  display: block;
+}
 
+.tags {
+  display: block;
+
+}
 svg {
   border: 1px solid red;
 }
+#right-hand{
+  display: block;
 
+}
 #node-box {
-  height: 1200px;
-  width: 300px;
+  height: 800px;
+  width: 600px;
+  overflow-y: scroll;
   border: 1px solid red;
   margin-left: 10px;
 }
 #data{
   padding-left: 20px;
 }
+#display-options{
+  height: 200px;
+  width: 6  00px;
+  margin: 10px;
+  border: 1px solid blue;
+  text-align: center;
+}
+
 h2{
   font-family: Arial, Helvetica, sans-serif;
 
   text-align: center;
 }
- body{
-   display: flex;
-   font-family: Arial, Helvetica, sans-serif;
-
- }
