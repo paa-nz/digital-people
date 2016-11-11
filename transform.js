@@ -1,7 +1,7 @@
 var fs  = require("fs");
 var userFile = process.argv[2] // error handling
 
-var output = '{ "nodes":[{ "group": 10, "text":"Digital People", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },\n'
+var output = '{ "nodes":[{ "group": 0, "text":"Digital People", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },\n'
 var DigitalPeople = output;
 fs.readFileSync('./'+userFile+'').toString().trim().split('\n').forEach(function (line) {
     var columns = line.split('\t');
@@ -91,7 +91,7 @@ function createLinks(nodes){
       for (var k=0; k< nodes.length; k++){          // every node {}
         if(nodes[i].tags[j] == nodes[k].text) { // if they are not the same node, or same group.
             if(nodes[i].group != nodes[k].group){
-              rawLinks.push({"source": i,"target":k, "srcName": nodes[i].text, "trgName": nodes[k].text })
+              rawLinks.push({"source": i,"target":k, "sourceName": nodes[i].text, "targetName": nodes[k].text })
             }
         }
       }

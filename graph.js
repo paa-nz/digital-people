@@ -2,14 +2,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 var d3 = require("d3");
 var dataList = document.getElementById('data');
 
+var tagsVisible = true;
+var refsVisible = true;
+
 document.getElementById("toggleRefs").addEventListener("click", toggleDisplay);
 document.getElementById("toggleTags").addEventListener("click", toggleDisplay);
 document.getElementById("clearData").addEventListener("click", function() {
   document.getElementById("data").innerHTML = "";
+  tagsVisible = true;
+  refsVisible = true;
 });
-
-var tagsVisible = true;
-var refsVisible = true;
 
 function toggleDisplay(e) {
   if(e.target.id=="toggleTags"){
@@ -60,12 +62,10 @@ var color = d3.scaleOrdinal()
 
 d3.json("./output.json", function(json) {
   var graph = json
-      console.log(graph);
-      console.log(graph.nodes);
 
       var simulation =
       d3.forceSimulation()
-      .force("charge", d3.forceManyBody().strength(-50))
+      .force("charge", d3.forceManyBody().strength(-55))
       .force("link", d3.forceLink().id(function(d, i) { return i;}).distance(20).strength(0.9))
       .force("center", d3.forceCenter(width/2, height/2))
       .force('X', d3.forceX(width/2).strength(0.15)) // retuirnx 100 d,group
@@ -76,28 +76,66 @@ d3.json("./output.json", function(json) {
     .selectAll("line")
     .data(graph.links)
     .enter().append("line")
-    //.attr("stroke-width", function(d) {return 0.5 });
 
   var node = svg.append("g")
     .attr("class", "nodes")
-    .selectAll("circle")
+    .selectAll("rect")
     .data(graph.nodes)
-    .enter().append("circle")
-      .attr("r", 5)
+    .enter().append("rect")
+      .attr("width", 12)
+      .attr('height', 12)
+      .attr("rx", 8)
+      .attr("ry", 8)
       .attr("fill", function(d) { return color(d.group); })
     .call(d3.drag()
       .on("start", dragstarted)
       .on("drag", dragged)
       .on("end", dragended));
 
-    node.append("title")
-      .text(function(d) {return d.text})
-      .style("text-anchor", "middle")
+      node.append("title")
+        .text(function(d) {return d.text})
+        .style("text-anchor", "middle")
+
+    node.on("mouseover", function(d, i) {
+        d3.select(this).style("r", radius*2);
+
+        var coord = d3.mouse(this)
+        console.log(coord);
+        // function getAncestors(i) {
+        var toConnect = []
+        link.style('stroke', function(l) {
+              if( l.target === d) {
+        //         console.log(l.source.index);
+        //         toConnect.push(l.source.index)
+        //
+        //         for (var j = 0; j < graph.links.length; j++) {
+        //           if(graph.links[j].target == l.source.index)
+        //             toConnect.push(j)
+        //         }
+        //
+        //         console.log('connected', toConnect);
+
+                return 'red';
+              }
+            });
+
+    })
+    node.on("mouseout", function (d) {
+      d3.select(this).style("r", radius);
+
+      link.style('stroke', '#999999')
+    })
+
+    node.on("click", function(d,i) {
+      if(d3.select(this).attr("rx") == 8){
+          d3.select(this).attr("rx", 0).attr("ry", 0);
+      } else {
+          d3.select(this).attr("rx", 8).attr("ry", 8);
+        };
 
 
-      d3.selectAll("circle")
-          .on("click", function(d,i) { addNodes( d ); }) // plus change look of node so know it is selected. 
-          //, on (mouseOver) create tooltip-like div, with name of datapoint, plus highlight edges towards centre.
+        addNodes( d );
+    })
 
     simulation
       .nodes(graph.nodes)
@@ -114,8 +152,8 @@ d3.json("./output.json", function(json) {
         .attr("y2", function(d) {return d.target.y; })
 
     node
-        .attr("cx", function(d) {return d.x  })
-        .attr("cy", function(d) {return d.y; });
+        .attr("transform", function(d) { return "translate(" + d.x + ", " + d.y + ")"; });
+
   }
 
   function dragstarted(d) {
@@ -134,8 +172,8 @@ d3.json("./output.json", function(json) {
   }
 
   function addNodes(node) {
+    console.log(node);
     //findParents(node)
-    console.log(node.tags);
     if(node.group != 5) {
       dataList.innerHTML += '<li>'+node.text+'</li>'
     }else{
