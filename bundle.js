@@ -95,9 +95,12 @@ d3.json("./output.json", function(json) {
       .text(function(d) {return d.text})
       .style("text-anchor", "middle")
 
+    node.on("mouseover", function(d, i) {
+          d3.select(this).style("r", radius*2);
+        })
 
-      d3.selectAll("circle")
-          .on("click", function(d,i) { addNodes( d ); }) // plus change look of node so know it is selected. 
+    d3.selectAll("circle")
+          .on("click", function(d,i) { addNodes( d ); }) // plus change look of node so know it is selected.
           //, on (mouseOver) create tooltip-like div, with name of datapoint, plus highlight edges towards centre.
 
     simulation
@@ -115,7 +118,7 @@ d3.json("./output.json", function(json) {
         .attr("y2", function(d) {return d.target.y; })
 
     node
-        .attr("cx", function(d) {return d.x  })
+        .attr("cx", function(d) {return d.x  }) // remember to change try Gilsha example
         .attr("cy", function(d) {return d.y; });
   }
 
