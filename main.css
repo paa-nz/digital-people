@@ -21,6 +21,9 @@ body{
   display: block;
 
 }
+.hidden {
+  display: none;
+}
 svg {
   border: 1px solid red;
 }
