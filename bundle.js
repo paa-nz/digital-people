@@ -26,11 +26,13 @@ function tagsSwitch(visible) { // consider using classList in refactor to add/re
     for (var i = 0; i < tags.length; i++) {
       tags[i].style.display = 'none'
     }
+    toggleTags.innerHTML = "TURN TAGS ON";
     tagsVisible = false;
    }else {
      for (var i = 0; i < tags.length; i++) {
        tags[i].style.display = 'block'
      }
+     toggleTags.innerHTML = "TURN TAGS OFF";
      tagsVisible = true;
    }
 }
@@ -67,7 +69,12 @@ d3.json("./output.json", function(json) {
       var simulation =
       d3.forceSimulation()
       .force("charge", d3.forceManyBody().strength(-50))
-      .force("link", d3.forceLink().id(function(d, i) { return i;}).distance(20).strength(0.9))
+      .force("collide", d3.forceCollide(function(d){
+              return d.group * 1.7    // how do I make nodes repel when a larger node is added?
+                                      // My short fix is to make the g.5 nodes be repelled a distance which makes space for the larger nodes.
+              // return d3.select(this).attr("r") + 3
+            }).strength(1))
+      .force("link", d3.forceLink().id(function(d, i) { return i;}).distance(20).strength(0.9)) 
       .force("center", d3.forceCenter(width/2, height/2))
       .force('X', d3.forceX(width/2).strength(0.15)) // retuirnx 100 d,group
       .force('Y', d3.forceY(height/2).strength(0.15));
@@ -84,7 +91,7 @@ d3.json("./output.json", function(json) {
     .selectAll("circle")
     .data(graph.nodes)
     .enter().append("circle")
-      .attr("r", 5)
+      .attr("r", radius)
       .attr("fill", function(d) { return color(d.group); })
     .call(d3.drag()
       .on("start", dragstarted)
@@ -95,13 +102,19 @@ d3.json("./output.json", function(json) {
       .text(function(d) {return d.text})
       .style("text-anchor", "middle")
 
-    node.on("mouseover", function(d, i) {
-          d3.select(this).style("r", radius*2);
-        })
+    node.on("click", function(d, i) {
+      if(d3.select(this).attr("r") == radius){
+        console.log('adf');
+        addNodes(d)
 
-    d3.selectAll("circle")
-          .on("click", function(d,i) { addNodes( d ); }) // plus change look of node so know it is selected.
-          //, on (mouseOver) create tooltip-like div, with name of datapoint, plus highlight edges towards centre.
+          d3.select(this).attr("r", radius * 2);
+        }else{
+          d3.select(this).attr("r", radius);
+        }
+        ticked()
+    })
+
+    //, on (mouseOver) create tooltip-like div, with name of datapoint, plus highlight edges towards centre.
 
     simulation
       .nodes(graph.nodes)
@@ -138,14 +151,12 @@ d3.json("./output.json", function(json) {
   }
 
   function addNodes(node) {
-    //findParents(node)
-    console.log(node.tags);
-    if(node.group != 5) {
-      dataList.innerHTML += '<li>'+node.text+'</li>'
-    }else{
-      var year = ''
+  if(node.group == 5) {
+      var tags = node.tags[0];
+      var refs = node.reference;
+      var year = '';
       if(node.year>1) year = node.year;
-      dataList.innerHTML += '<li> <p>'+node.text+'</p> <i class="tags">'+node.tags[0]+':</i> <p class="refs">['+node.reference+'] '+year+' </p></li>'
+      dataList.innerHTML += '<li> <p>'+node.text+'</p> <i class="tags">( '+tags+' ):</i> <p class="refs">['+refs+'] '+year+' </p></li>'
     }
   }
 })

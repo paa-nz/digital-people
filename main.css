@@ -15,11 +15,12 @@ body{
 }
 .refs {
   display: block;
+  margin-bottom: 2px;
 }
 
 .tags {
   display: block;
-
+  margin-bottom: 2px;
 }
 svg {
   border: 1px solid red;
@@ -38,6 +39,10 @@ svg {
 #data{
   padding-left: 20px;
 }
+ul p{
+  margin: 5px;
+}
+
 #display-options{
   height: 200px;
   width: 6  00px;
