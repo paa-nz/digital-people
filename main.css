@@ -59,3 +59,13 @@ h2{
 
   text-align: center;
 }
+
+div.tooltip {
+     position: absolute;
+     text-align: left;
+     padding: 8px;
+     font: 16px sans-serif;
+     background: #ddd;
+     border: solid 1px #aaa;
+     pointer-events: none;
+ }

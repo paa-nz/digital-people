@@ -10,8 +10,7 @@ document.getElementById("toggleTags").addEventListener("click", toggleDisplay);
 document.getElementById("clearData").addEventListener("click", function() {
   document.getElementById("data").innerHTML = "";
   // AND ALL NODES BACK TO SMALLER RADUIUS
-  tagsVisible = true;
-  refsVisible = true;
+
 });
 
 function toggleDisplay(e) {
@@ -89,7 +88,7 @@ d3.json("./output.json", function(json) {
 
   var node = svg.append("g")
     .attr("class", "nodes")
-    .selectAll("rect")
+    .selectAll("circle")
     .data(graph.nodes)
     .enter().append("circle")
       .attr("r", radius)
@@ -98,10 +97,6 @@ d3.json("./output.json", function(json) {
       .on("start", dragstarted)
       .on("drag", dragged)
       .on("end", dragended));
-
-    node.append("title")
-      .text(function(d) {return d.text})
-      .style("text-anchor", "middle")
 
     node.on("click", function(d, i) {
       if(d3.select(this).attr("r") == radius){
@@ -114,6 +109,23 @@ d3.json("./output.json", function(json) {
         }
         ticked()
     })
+
+    node.on("mouseover", function(d){
+      return   tooltip.style("visibility", "visible")
+               .attr("class", 'tooltip')
+               .text(d.text);
+    })
+    node.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
+    node.on("mousemove", function(){return tooltip.style("top",
+    (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
+
+
+    var tooltip = d3.select("body")
+        .append("div")
+        .style("position", "absolute")
+        .style("z-index", "10")
+        .style("visibility", "hidden")
+        .text("a simple tooltip");
 
     //, on (mouseOver) create tooltip-like div, with name of datapoint, plus highlight edges towards centre
     simulation
