@@ -2,15 +2,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 var d3 = require("d3");
 var dataList = document.getElementById('data');
 
+var tagsVisible = true;
+var refsVisible = true;
+
 document.getElementById("toggleRefs").addEventListener("click", toggleDisplay);
 document.getElementById("toggleTags").addEventListener("click", toggleDisplay);
 document.getElementById("clearData").addEventListener("click", function() {
   document.getElementById("data").innerHTML = "";
   // AND ALL NODES BACK TO SMALLER RADUIUS
+  tagsVisible = true;
+  refsVisible = true;
 });
-
-var tagsVisible = true;
-var refsVisible = true;
 
 function toggleDisplay(e) {
   if(e.target.id=="toggleTags"){
@@ -65,8 +67,6 @@ var color = d3.scaleOrdinal()
 
 d3.json("./output.json", function(json) {
   var graph = json
-      console.log(graph);
-      console.log(graph.nodes);
 
       var simulation =
       d3.forceSimulation()
@@ -86,11 +86,10 @@ d3.json("./output.json", function(json) {
     .selectAll("line")
     .data(graph.links)
     .enter().append("line")
-    //.attr("stroke-width", function(d) {return 0.5 });
 
   var node = svg.append("g")
     .attr("class", "nodes")
-    .selectAll("circle")
+    .selectAll("rect")
     .data(graph.nodes)
     .enter().append("circle")
       .attr("r", radius)
@@ -116,8 +115,7 @@ d3.json("./output.json", function(json) {
         ticked()
     })
 
-    //, on (mouseOver) create tooltip-like div, with name of datapoint, plus highlight edges towards centre.
-
+    //, on (mouseOver) create tooltip-like div, with name of datapoint, plus highlight edges towards centre
     simulation
       .nodes(graph.nodes)
       .on("tick", ticked);
@@ -157,7 +155,7 @@ d3.json("./output.json", function(json) {
       var tags = node.tags[0];
       var refs = node.reference;
       var year = '';
-      if(node.year>1) year = node.year;
+  if(node.year>1) year = node.year;
       dataList.innerHTML += '<li> <p>'+node.text+'</p> <i class="tags">( '+tags+' )</i> <p class="refs">['+refs+'] '+year+' </p></li>'
     }
   }
