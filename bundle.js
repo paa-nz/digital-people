@@ -7,6 +7,7 @@ document.getElementById("toggleRefs").addEventListener("click", toggleDisplay);
 document.getElementById("toggleTags").addEventListener("click", toggleDisplay);
 document.getElementById("clearData").addEventListener("click", function() {
   document.getElementById("data").innerHTML = "";
+  // AND ALL NODES BACK TO SMALLER RADUIUS
 });
 
 var tagsVisible = true;
@@ -42,11 +43,13 @@ function tagsSwitch(visible) { // consider using classList in refactor to add/re
      for (var i = 0; i < refs.length; i++) {
        refs[i].style.display = 'none'
      }
+     toggleRefs.innerHTML = "TURN REFS ON"
      refsVisible = false;
     }else {
       for (var i = 0; i < refs.length; i++) {
         refs[i].style.display = 'block'
       }
+      toggleRefs.innerHTML = "TURN REFS OFF"
       refsVisible = true;
     }
  }
@@ -74,7 +77,7 @@ d3.json("./output.json", function(json) {
                                       // My short fix is to make the g.5 nodes be repelled a distance which makes space for the larger nodes.
               // return d3.select(this).attr("r") + 3
             }).strength(1))
-      .force("link", d3.forceLink().id(function(d, i) { return i;}).distance(20).strength(0.9)) 
+      .force("link", d3.forceLink().id(function(d, i) { return i;}).distance(20).strength(0.9))
       .force("center", d3.forceCenter(width/2, height/2))
       .force('X', d3.forceX(width/2).strength(0.15)) // retuirnx 100 d,group
       .force('Y', d3.forceY(height/2).strength(0.15));
@@ -150,13 +153,13 @@ d3.json("./output.json", function(json) {
       d.fy = null;
   }
 
-  function addNodes(node) {
+  function addNodes(node) { // IF tags are not on, and new nodes are added, how to have nodes be consistent with this?
   if(node.group == 5) {
       var tags = node.tags[0];
       var refs = node.reference;
       var year = '';
       if(node.year>1) year = node.year;
-      dataList.innerHTML += '<li> <p>'+node.text+'</p> <i class="tags">( '+tags+' ):</i> <p class="refs">['+refs+'] '+year+' </p></li>'
+      dataList.innerHTML += '<li> <p>'+node.text+'</p> <i class="tags">( '+tags+' )</i> <p class="refs">['+refs+'] '+year+' </p></li>'
     }
   }
 })
