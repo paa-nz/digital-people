@@ -28,12 +28,14 @@ function tagsSwitch(visible) { // consider using classList in refactor to add/re
       tags[i].style.display = 'none'
     }
     toggleTags.innerHTML = "TURN TAGS ON";
+    toggleTags.classList.toggle("off")
     tagsVisible = false;
    }else {
      for (var i = 0; i < tags.length; i++) {
        tags[i].style.display = 'block'
      }
      toggleTags.innerHTML = "TURN TAGS OFF";
+     toggleTags.classList.toggle("off")
      tagsVisible = true;
    }
 }
@@ -44,12 +46,16 @@ function tagsSwitch(visible) { // consider using classList in refactor to add/re
        refs[i].style.display = 'none'
      }
      toggleRefs.innerHTML = "TURN REFS ON"
+     toggleRefs.classList.toggle("off")
+
      refsVisible = false;
     }else {
       for (var i = 0; i < refs.length; i++) {
         refs[i].style.display = 'block'
       }
       toggleRefs.innerHTML = "TURN REFS OFF"
+      toggleRefs.classList.toggle("off")
+
       refsVisible = true;
     }
  }
