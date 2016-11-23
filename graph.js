@@ -77,12 +77,7 @@ d3.json("./output.json", function(json) {
       var simulation =
       d3.forceSimulation()
       .force("charge", d3.forceManyBody().strength(-50))
-      .force("collide", d3.forceCollide(
-              //   function(d){
-              // return d.group * 2    // how do I make nodes repel when a larger node is added?
-              //                         // My short fix is to make the g.5 nodes be repelled a distance which makes space for the larger nodes.
-              // return d3.select(this).attr("r") + 3
-            ).radius(function (d) { return 15 - d.group}).strength(2).iterations(2))
+      .force("collide", d3.forceCollide().radius(function (d) { return 15 - d.group}).strength(2).iterations(2))
       .force("link", d3.forceLink().id(function(d, i) { return i;}).distance(20).strength(0.9))
       .force("center", d3.forceCenter(width/2, height/2))
       .force('X', d3.forceX(width/2).strength(0.15)) // retuirnx 100 d,group
@@ -124,8 +119,7 @@ d3.json("./output.json", function(json) {
                .text(d.text);
     })
     node.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
-    node.on("mousemove", function(){return tooltip.style("top",
-    (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
+    node.on("mousemove", function(){return tooltip.style("top",(d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
 
 
     var tooltip = d3.select("body")
@@ -135,7 +129,6 @@ d3.json("./output.json", function(json) {
         .style("visibility", "hidden")
         .text("a simple tooltip");
 
-    //, on (mouseOver) create tooltip-like div, with name of datapoint, plus highlight edges towards centre
     simulation
       .nodes(graph.nodes)
       .on("tick", ticked);
