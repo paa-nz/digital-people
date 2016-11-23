@@ -115,12 +115,23 @@ d3.json("./output.json", function(json) {
     })
 
     node.on("mouseover", function(d){
+      link.style('stroke', function(l) {
+        if (d === l.source || d === l.target)
+          return '#FF0000';
+        else
+          return '#999';
+        });
       return   tooltip.style("visibility", "visible")
                .attr("class", 'tooltip')
                .text(d.text);
     })
-    node.on("mouseout", function(){return tooltip.style("visibility", "hidden");});
-    node.on("mousemove", function(){return tooltip.style("top",(d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px");})
+    node.on("mouseout", function(){
+            link.style('stroke', function(l){
+
+            return '#999'})
+            return tooltip.style("visibility", "hidden");
+    });
+    node.on("mousemove", function(){return tooltip.style("top",(d3.event.pageY-10)+"px").style("left",(d3.event.pageX+20)+"px");})
 
 
     var tooltip = d3.select("body")
