@@ -114,12 +114,14 @@ d3.json("./output.json", function(json) {
         ticked()
     })
 
-    node.on("mouseover", function(d){
+    node.on("mouseover", function(d, i){
+      // find all the nodes connected to this one
+      console.log(i);
+      console.log(d);
       link.style('stroke', function(l) {
+
         if (d === l.source || d === l.target)
           return '#FF0000';
-        else
-          return '#999';
         });
       return   tooltip.style("visibility", "visible")
                .attr("class", 'tooltip')
@@ -127,8 +129,7 @@ d3.json("./output.json", function(json) {
     })
     node.on("mouseout", function(){
             link.style('stroke', function(l){
-
-            return '#999'})
+              return '#999'})
             return tooltip.style("visibility", "hidden");
     });
     node.on("mousemove", function(){return tooltip.style("top",(d3.event.pageY-10)+"px").style("left",(d3.event.pageX+20)+"px");})
