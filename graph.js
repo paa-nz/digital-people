@@ -141,6 +141,7 @@ d3.json("./output.json", function(json) {
       // find all the nodes connected to this one
       console.log(i);
       console.log(d);
+      d3.select(this).style("stroke", "red");
       link.style('stroke', function(l) {
 
         if (d === l.source || d === l.target)
@@ -150,7 +151,9 @@ d3.json("./output.json", function(json) {
                .attr("class", 'tooltip')
                .text(d.text);
     })
-    node.on("mouseout", function(){
+    node.on("mouseout", function(d){
+      d3.select(this).style("stroke", "#fff");
+
             link.style('stroke', function(l){
               return '#999'})
             return tooltip.style("visibility", "hidden");
