@@ -90,7 +90,10 @@ d3.json("./output.json", function(json) {
   var simulation =
       d3.forceSimulation()
       .force("charge", d3.forceManyBody().strength(-50))
-      .force("collide", d3.forceCollide().radius(function (d) { return 15 - d.group}).strength(2).iterations(2))
+      .force("collide", d3.forceCollide().radius(function (d) {
+                      if(d.group==0){return 48}
+                      else{return 15 - d.group}
+                      }).strength(2).iterations(2))
       .force("link", d3.forceLink().id(function(d, i) { return i;}).distance(20).strength(0.9))
       .force("center", d3.forceCenter(width/2, height/2))
       .force('X', d3.forceX(width/2).strength(0.15)) // retuirnx 100 d,group
@@ -138,6 +141,7 @@ d3.json("./output.json", function(json) {
       // find all the nodes connected to this one
       console.log(i);
       console.log(d);
+      d3.select(this).style("stroke", "red");
       link.style('stroke', function(l) {
 
         if (d === l.source || d === l.target)
@@ -147,7 +151,9 @@ d3.json("./output.json", function(json) {
                .attr("class", 'tooltip')
                .text(d.text);
     })
-    node.on("mouseout", function(){
+    node.on("mouseout", function(d){
+      d3.select(this).style("stroke", "#fff");
+
             link.style('stroke', function(l){
               return '#999'})
             return tooltip.style("visibility", "hidden");
