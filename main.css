@@ -30,7 +30,9 @@ svg {
 }
 #right-hand{
   display: block;
-
+}
+#0 {
+  fill: yellow;
 }
 #node-box {
   height: 800px;

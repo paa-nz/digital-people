@@ -75,7 +75,20 @@ var color = d3.scaleOrdinal()
 d3.json("./output.json", function(json) {
   var graph = json
 
-      var simulation =
+  var defs = svg.append('svg:defs');
+
+  defs.append("svg:pattern")
+        .attr("id", "vit-icon")
+        .attr("width", 1)
+        .attr("height", 1)
+        .append("svg:image")
+        .attr("xlink:href", "http://st2.depositphotos.com/1069290/10413/v/170/depositphotos_104132320-Leonardo-da-vinci-vitruvian-man.jpg")
+        .attr("width", 80)
+        .attr("height", 80)
+        .attr("x", 0)
+        .attr("y", 0)
+
+  var simulation =
       d3.forceSimulation()
       .force("charge", d3.forceManyBody().strength(-50))
       .force("collide", d3.forceCollide().radius(function (d) { return 15 - d.group}).strength(2).iterations(2))
@@ -95,16 +108,24 @@ d3.json("./output.json", function(json) {
     .selectAll("circle")
     .data(graph.nodes)
     .enter().append("circle")
-      .attr("r", radius)
-      .attr("fill", function(d) { return color(d.group); })
+      .attr("id", function(d, i) { return 'c'+i})
+      .attr("r",function(d) {
+            if(d.group==0) {return 40}
+            else{
+              return radius}
+            })
+      .style("fill", function(d) {
+            if(d.group==0) {return "url(#vit-icon)";}
+            else {return color(d.group); }
+          })
     .call(d3.drag()
       .on("start", dragstarted)
       .on("drag", dragged)
       .on("end", dragended));
 
     node.on("click", function(d, i) {
+      if(d.group==0) return;
       if(d3.select(this).attr("r") == radius){
-        console.log('adf');
         addNodes(d)
 
           d3.select(this).attr("r", radius * 2);
@@ -156,9 +177,10 @@ d3.json("./output.json", function(json) {
         .attr("x2", function(d) {return d.target.x; })
         .attr("y2", function(d) {return d.target.y; })
 
-    node
-        .attr("cx", function(d) {return d.x  }) // remember to change try Gilsha example
-        .attr("cy", function(d) {return d.y; });
+        node
+            .attr("transform", function(d) {
+                return "translate(" + d.x + ", " + d.y + ")";
+            });
   }
 
   function dragstarted(d) {
@@ -177,6 +199,7 @@ d3.json("./output.json", function(json) {
   }
 
   function addNodes(node) { // IF tags are not on, and new nodes are added, how to have nodes be consistent with this?
+
   if(node.group == 5) {
       var tags = node.tags[0];
       var refs = node.reference;
