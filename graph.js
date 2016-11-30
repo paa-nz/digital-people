@@ -210,7 +210,7 @@ d3.json("./output.json", function(json) {
       var refs = node.reference;
       var year = '';
   if(node.year>1) year = node.year;
-      dataList.innerHTML += '<li> <p>'+node.text+'</p> <i class="tags">( '+tags+' )</i> <p class="refs">['+refs+'] '+year+' </p></li>'
+      dataList.innerHTML += '<li> <p class="datum">'+node.text+'</p> <p class="tags">('+tags+')</> <p class="refs">['+refs+'] '+year+' </p></li>'
     }
   }
 })

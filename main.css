@@ -15,12 +15,11 @@ body{
 }
 .refs {
   display: block;
-  margin-bottom: 2px;
+  margin: 10px 0;
 }
-
 .tags {
-  display: block;
-  margin-bottom: 2px;
+  display: inline;
+  font-style: italic;
 }
 .hidden {
   display: none;
@@ -30,9 +29,6 @@ svg {
 }
 #right-hand{
   display: block;
-}
-#0 {
-  fill: yellow;
 }
 #node-box {
   height: 800px;
@@ -45,7 +41,7 @@ svg {
   padding-left: 20px;
 }
 ul p{
-  margin: 5px;
+  display: inline;
 }
 
 #display-options{
