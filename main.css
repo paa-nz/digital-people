@@ -13,6 +13,9 @@ body{
   stroke: #fff;
   stroke-width: 1.5px;
 }
+.datum{
+  display: inline;
+}
 .refs {
   display: block;
   margin: 10px 0;
@@ -23,6 +26,10 @@ body{
 }
 .hidden {
   display: none;
+}
+.off {
+  background-color: #ffffff;
+  color: #000000;
 }
 svg {
   border: 1px solid red;
@@ -89,7 +96,3 @@ div.tooltip {
  	position:relative;
  	top:1px;
  }
-.off {
-  background-color: #ffffff;
-  color: #000000;
-}
