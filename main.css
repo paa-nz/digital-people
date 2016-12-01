@@ -13,26 +13,29 @@ body{
   stroke: #fff;
   stroke-width: 1.5px;
 }
+.datum{
+  display: inline;
+}
 .refs {
   display: block;
-  margin-bottom: 2px;
+  margin: 10px 0;
 }
-
 .tags {
-  display: block;
-  margin-bottom: 2px;
+  display: inline;
+  font-style: italic;
 }
 .hidden {
   display: none;
+}
+.off {
+  background-color: #ffffff;
+  color: #000000;
 }
 svg {
   border: 1px solid red;
 }
 #right-hand{
   display: block;
-}
-#0 {
-  fill: yellow;
 }
 #node-box {
   height: 800px;
@@ -45,7 +48,7 @@ svg {
   padding-left: 20px;
 }
 ul p{
-  margin: 5px;
+  display: inline;
 }
 
 #display-options{
@@ -93,7 +96,3 @@ div.tooltip {
  	position:relative;
  	top:1px;
  }
-.off {
-  background-color: #ffffff;
-  color: #000000;
-}

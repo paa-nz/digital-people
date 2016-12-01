@@ -10,9 +10,10 @@ document.getElementById("toggleRefs").addEventListener("click", toggleDisplay);
 document.getElementById("toggleTags").addEventListener("click", toggleDisplay);
 document.getElementById("clearData").addEventListener("click", function() {
   document.getElementById("data").innerHTML = "";
-  // AND ALL NODES BACK TO SMALLER RADUIUS
-  // and return buttons to default state.
-
+  d3.selectAll("circle").attr("r", function(d){
+    if(d.group==0) return 40
+    else { return radius}
+  });
 });
 
 function toggleDisplay(e) {
@@ -23,18 +24,18 @@ function toggleDisplay(e) {
     refsSwitch(refsVisible)
   }
 }
-function tagsSwitch(visible) { // consider using classList in refactor to add/remove class rather than attr of class
+function tagsSwitch(visible) {
   var tags = document.getElementsByClassName('tags')
    if(visible){
     for (var i = 0; i < tags.length; i++) {
-      tags[i].style.display = 'none'
+      tags[i].classList.add("hidden")
     }
     toggleTags.innerHTML = "TAGS ON";
     toggleTags.classList.toggle("off")
     tagsVisible = false;
    }else {
      for (var i = 0; i < tags.length; i++) {
-       tags[i].style.display = 'block'
+       tags[i].classList.remove("hidden")
      }
      toggleTags.innerHTML = "TAGS OFF";
      toggleTags.classList.toggle("off")
@@ -45,7 +46,7 @@ function tagsSwitch(visible) { // consider using classList in refactor to add/re
    var refs = document.getElementsByClassName('refs')
     if(visible){
      for (var i = 0; i < refs.length; i++) {
-       refs[i].style.display = 'none'
+       refs[i].classList.add("hidden")
      }
      toggleRefs.innerHTML = "REFS ON"
      toggleRefs.classList.toggle("off")
@@ -53,7 +54,7 @@ function tagsSwitch(visible) { // consider using classList in refactor to add/re
      refsVisible = false;
     }else {
       for (var i = 0; i < refs.length; i++) {
-        refs[i].style.display = 'block'
+        refs[i].classList.remove("hidden");
       }
       toggleRefs.innerHTML = "REFS OFF"
       toggleRefs.classList.toggle("off")
@@ -100,6 +101,13 @@ d3.json("./output.json", function(json) {
       .force('X', d3.forceX(width/2).strength(0.15)) // retuirnx 100 d,group
       .force('Y', d3.forceY(height/2).strength(0.15));
 
+      simulation
+        .nodes(graph.nodes)
+        .on("tick", ticked);
+
+      simulation.force("link")
+        .links(graph.links);
+
   var link = svg.append("g")
     .attr("class", "links")
     .selectAll("line")
@@ -135,7 +143,6 @@ d3.json("./output.json", function(json) {
         }else{
           d3.select(this).attr("r", radius);
         }
-        ticked()
     })
 
     node.on("mouseover", function(d, i){
@@ -155,8 +162,7 @@ d3.json("./output.json", function(json) {
     node.on("mouseout", function(d){
       d3.select(this).style("stroke", "#fff");
 
-            link.style('stroke', function(l){
-              return '#999'})
+      link.style('stroke','#999')
             return tooltip.style("visibility", "hidden");
     });
     node.on("mousemove", function(){return tooltip.style("top",(d3.event.pageY-10)+"px").style("left",(d3.event.pageX+20)+"px");})
@@ -167,14 +173,7 @@ d3.json("./output.json", function(json) {
         .style("position", "absolute")
         .style("z-index", "10")
         .style("visibility", "hidden")
-        .text("a simple tooltip");
-
-    simulation
-      .nodes(graph.nodes)
-      .on("tick", ticked);
-
-    simulation.force("link")
-      .links(graph.links);
+        .text("a tooltip");
 
   function ticked() {
     link
@@ -206,12 +205,26 @@ d3.json("./output.json", function(json) {
 
   function addNodes(node) { // IF tags are not on, and new nodes are added, how to have nodes be consistent with this?
 
-  if(node.group == 5) {
-      var tags = node.tags[0];
-      var refs = node.reference;
-      var year = '';
-  if(node.year>1) year = node.year;
-      dataList.innerHTML += '<li> <p>'+node.text+'</p> <i class="tags">( '+tags+' )</i> <p class="refs">['+refs+'] '+year+' </p></li>'
+    if(node.group == 5) {
+        var tags = node.tags[0];
+        var refs = node.reference;
+        var year = '';
+    if(node.year>1) year = node.year;
+
+    var dataText = '<p class="datum">'+node.text+' </p>'
+
+    if(tagsVisible){
+      dataText += '<p class="tags">('+tags+')</>'
+    } else {
+      dataText += '<p class="tags hidden">('+tags+')</p>'
+    }
+
+    if(refsVisible){
+      dataText += '<p class="refs">['+refs+'] '+year+' </p>'
+    }else {
+      dataText += '<p class="refs hidden">['+refs+'] '+year+' </p>'
+    }
+    dataList.innerHTML += '<li>'+dataText+'</li>'
     }
   }
 })
