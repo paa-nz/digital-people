@@ -72,7 +72,7 @@ var color = d3.scaleOrdinal()
           .range(["#703030", "#2F343B" , "#7E827A", "#E3CDA4", "#C77966"]);;
 
 
-d3.json("./output.json", function(json) {
+d3.json("./tempoutput.json", function(json) {
   var graph = json
 
   var defs = svg.append('svg:defs');
