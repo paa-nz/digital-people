@@ -1,44 +1,41 @@
 var fs  = require("fs");
-var userFile = process.argv[2] // error handling
 
 var output = '{ "nodes":[{ "group": 0, "text":"Digital People", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },\n'
-var DigitalPeople = output;
-fs.readFileSync('./'+userFile+'').toString().trim().split('\n').forEach(function (line) {
-    var columns = line.split('\t');
+var DigitalPeople = output; // re-add after merging etc?
 
-    for(var i = 1; i<columns.length; i++) {
-      columns[i] = columns[i].replace(/(\r\n|\n|\r)/gm,"")
-    }
-    columns = columns.filter(function(entry) { return entry.trim() != ''; });
+  fs.readFileSync('./Tags/tags.tsv').toString().trim().split('\n').forEach(function (line) { //First read tags
+      var columns = line.replace(/(\r\n|\n|\r)/gm,"").split('\t')
+      columns = columns.filter(function(entry) { return entry.trim() != ''; });
 
-    var child; // change to parent
-    for (var i = 1; i <= columns.length; i++) {
-      !columns[i] ? child = columns[i-1] : child = columns[i]
-      output += ' { "group": '+i+', "text":"'+(columns[i-1])+'", "tags":['+JSON.stringify(child)+'] }, \n'
-    }
-
-});
+      var child; // change to parent
+      for (var i = 1; i <= columns.length; i++) {
+        !columns[i] ? child = columns[i-1] : child = columns[i]
+        output += ' { "group": '+i+', "text":"'+(columns[i-1])+'", "tags":['+JSON.stringify(child)+'] }, \n'
+      }
+  });
 
 var dataPoints = ""
-fs.readFileSync('./DigitalProfile.tsv').toString().trim().split('\n').forEach(function (line) {
 
-  var columns = line.split('\t');
+  fs.readFileSync('./Digital Profile/Digital Profile.tsv').toString().trim().split('\n').forEach(function (line) { //Then data
 
-  if(!columns[1]){
-    columns[1] = 0;
-  }
+    var columns = line.split('\t');
 
-  var tags = [];
-  for(var i = 3; i<columns.length; i++) {
-    columns[i] = columns[i].replace(/(\r\n|\n|\r)/gm,"")
-    if(columns[i].length>1){
-      tags.push(JSON.stringify(columns[i]))
+    if(!columns[1]){
+      columns[1] = 0;
     }
-  }
-  for (var i = 0; i < tags.length; i++) {
-  dataPoints += '{"group": 5, "text":"'+(columns[2])+'", "reference":"'+(columns[0])+'", "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
-  }
-})
+
+    var tags = [];
+    for(var i = 3; i<columns.length; i++) {
+      columns[i] = columns[i].replace(/(\r\n|\n|\r)/gm,"")
+      if(columns[i].length>1){
+        tags.push(JSON.stringify(columns[i]))
+      }
+    }
+    for (var i = 0; i < tags.length; i++) {
+    dataPoints += '{"group": 5, "text":"'+(columns[2])+'", "reference":["'+(columns[0])+'"], "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
+    }
+  })
+
 
 output += dataPoints+'          ] }'
 output = output.replace(/,(?=[^,]*$)/, '')
@@ -57,14 +54,25 @@ var group3 = x.nodes.filter(function(node){
 var group5 = x.nodes.filter(function(node){
     return (node.group == 5);
 })
-var group10 = x.nodes.filter(function(node){
-    return (node.group == 10);
+var group0 = x.nodes.filter(function(node){
+    return (node.group == 0);
 })
+
 group1 = merge(group1)
 group2 = merge(group2)
 group3 = merge(group3)
 
-output = JSON.stringify(group10.concat(group1, group2, group3, group5)); // an array of the nodes and datapoints.
+fs.readFileSync('./References/Digital Profile - Bibliography.tsv').toString().trim().split('\n').forEach(function(line) {
+  var columns = line.replace(/(\r\n|\n|\r)/gm,"").split('\t')
+
+  for (var i = 0; i < group5.length; i++) {
+      if(group5[i].group == 5 && columns[0] == group5[i].reference){
+          group5[i].reference.push(columns[1])
+      }
+    }
+})
+
+output = JSON.stringify(group0.concat(group1, group2, group3, group5)); // an array of the nodes and datapoints.
 
 output = '{ "nodes": '+output+' , "links": '+JSON.stringify(createLinks(output)) +'}'
 
@@ -128,4 +136,5 @@ function removeDups(a){ // possible not any actual duplicates.
   return a;
   }
 
-fs.appendFileSync("./output.json", output);
+
+fs.appendFileSync("./tempoutput.json", output);

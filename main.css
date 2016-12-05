@@ -16,7 +16,11 @@ body{
 .datum{
   display: inline;
 }
-.refs {
+.ref-number {
+  display: block;
+  margin: 10px 0;
+}
+ .ref-text {
   display: block;
   margin: 10px 0;
 }
