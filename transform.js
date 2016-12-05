@@ -1,15 +1,10 @@
 var fs  = require("fs");
-var glob = require("glob")
 
 var output = '{ "nodes":[{ "group": 0, "text":"Digital People", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },\n'
 var DigitalPeople = output; // re-add after merging etc?
 
   fs.readFileSync('./Tags/tags.tsv').toString().trim().split('\n').forEach(function (line) { //First read tags
-      var columns = line.split('\t');
-
-      for(var i = 1; i<columns.length; i++) {
-        columns[i] = columns[i].replace(/(\r\n|\n|\r)/gm,"")
-      }
+      var columns = line.replace(/(\r\n|\n|\r)/gm,"").split('\t')
       columns = columns.filter(function(entry) { return entry.trim() != ''; });
 
       var child; // change to parent
@@ -18,7 +13,6 @@ var DigitalPeople = output; // re-add after merging etc?
         output += ' { "group": '+i+', "text":"'+(columns[i-1])+'", "tags":['+JSON.stringify(child)+'] }, \n'
       }
   });
-console.log(output);
 
 var dataPoints = ""
 
@@ -38,7 +32,7 @@ var dataPoints = ""
       }
     }
     for (var i = 0; i < tags.length; i++) {
-    dataPoints += '{"group": 5, "text":"'+(columns[2])+'", "reference":"'+(columns[0])+'", "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
+    dataPoints += '{"group": 5, "text":"'+(columns[2])+'", "reference":["'+(columns[0])+'"], "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
     }
   })
 
@@ -64,10 +58,19 @@ var group0 = x.nodes.filter(function(node){
     return (node.group == 0);
 })
 
-console.log(group1.length);
 group1 = merge(group1)
 group2 = merge(group2)
 group3 = merge(group3)
+
+fs.readFileSync('./References/Digital Profile - Bibliography.tsv').toString().trim().split('\n').forEach(function(line) {
+  var columns = line.replace(/(\r\n|\n|\r)/gm,"").split('\t')
+
+  for (var i = 0; i < group5.length; i++) {
+      if(group5[i].group == 5 && columns[0] == group5[i].reference){
+          group5[i].reference.push(columns[1])
+      }
+    }
+})
 
 output = JSON.stringify(group0.concat(group1, group2, group3, group5)); // an array of the nodes and datapoints.
 
@@ -132,5 +135,6 @@ function removeDups(a){ // possible not any actual duplicates.
       }
   return a;
   }
+
 
 fs.appendFileSync("./tempoutput.json", output);
