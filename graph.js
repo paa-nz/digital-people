@@ -18,12 +18,12 @@ document.getElementById("clearData").addEventListener("click", function() {
 document.addEventListener('click', function (e) {
   if (e.target.classList.contains('ref-number')) {
     console.log('e.target.classList', e.target.classList);
-    var fullRef = document.getElementsByClassName('ref-text', e.target.classList[1])
     console.log('e.target.classList[1]', e.target.classList[1]);
-    console.log('full ref ' ,fullRef);
-    for (var i = 0; i < fullRef.length; i++) {
-      if(fullRef[i].firstChild == e.target.classList[1])
-        fullRef[i].classList.toggle("hidden")
+    var refText = document.getElementsByClassName('ref-text', e.target.classList[1])
+    console.log('refText ', refText[0].classList[1]);
+    for (var i = 0; i < refText.length; i++) { // childNodes?
+      if(refText[i].classList[1] == e.target.classList[1])
+        refText[i].classList.toggle("hidden")
     }
   };
 })
