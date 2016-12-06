@@ -1,11 +1,11 @@
 var fs  = require("fs");
 
 var output = '{ "nodes":[{ "group": 0, "text":"Digital People", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },\n'
-var DigitalPeople = output; // re-add after merging etc?
+var DigitalPeople = output;
 
   fs.readFileSync('./Tags/tags.tsv').toString().trim().split('\n').forEach(function (line) { //First read tags
       var columns = line.replace(/(\r\n|\n|\r)/gm,"").split('\t')
-      columns = columns.filter(function(entry) { return entry.trim() != ''; });
+      columns = columns.filter(function(entry) { return entry.trim() != ''; }); // add to above .split
 
       var child; // change to parent
       for (var i = 1; i <= columns.length; i++) {

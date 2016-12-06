@@ -42,7 +42,7 @@ svg {
   display: block;
 }
 #node-box {
-  height: 800px;
+  height: 1000px;
   width: 300px;
   overflow-y: scroll;
   border: 1px solid red;
@@ -51,17 +51,17 @@ svg {
 #data{
   padding-left: 20px;
 }
-ul p{
-  display: inline;
-}
-
 #display-options{
-  height: 200px;
-  width: 6  00px;
+  height: 188px;
+  width: 300px;
   margin: 10px;
   border: 1px solid blue;
   text-align: center;
 }
+ul p{
+  display: inline;
+}
+
 
 h2{
   font-family: Arial, Helvetica, sans-serif;
