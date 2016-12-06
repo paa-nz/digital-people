@@ -24,7 +24,7 @@ document.addEventListener('click', function (e) {
     }
   };
 })
-// 
+//
 function toggleDisplay(e) {
   if(e.target.id=="toggleTags"){
     tagsSwitch(tagsVisible)
@@ -215,6 +215,10 @@ var color = d3.scaleOrdinal()
     function addNodes(node) { // IF tags are not on, and new nodes are added, how to have nodes be consistent with this?
   console.log(node);
       if(node.group == 5) {
+        // if(node.year.indexOf(',') != -1){
+        //   console.log('ddp!');
+        //   node = formatDoubleDataPoint(node)
+        // }
             var tags = node.tags[0];
             var refs = node.reference;
             var year = '';
@@ -238,6 +242,11 @@ var color = d3.scaleOrdinal()
     }
 
   })
+  function formatDoubleDataPoint(node) {
+    console.log(node.reference);
+    return node
+
+  }
 
 
 });

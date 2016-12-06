@@ -16,7 +16,7 @@ var DigitalPeople = output;
 
 var dataPoints = ""
 
-  fs.readFileSync('./Digital Profile/Digital Profile.tsv').toString().trim().split('\n').forEach(function (line) { //Then data
+  fs.readFileSync('./Digital Profile/Digital Profile - Digital Profile.tsv').toString().trim().split('\n').forEach(function (line) { //Then data
 
     var columns = line.split('\t');
 
@@ -35,6 +35,14 @@ var dataPoints = ""
     dataPoints += '{"group": 5, "text":"'+(columns[2])+'", "reference":["'+(columns[0])+'"], "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
     }
   })
+// Check if column[0] has a comma, indicating more than one reference.
+// For each reference, add a new object to the "reference" array i.e reference: [{ {number: {123} }]
+// Where the references are added, change so it adds a property like "text": {"J. Bloggs 2012"}
+//  so it looks like:
+// references: [ { number: { 1}, text: {dsaf} },
+//               { number: {3}, text: {sdf} },
+//             ]
+// Sort out how the node.text is displayed in the graph.js. Insert <br> if <> is in node.text string.
 
 
 output += dataPoints+'          ] }'
@@ -66,7 +74,7 @@ fs.readFileSync('./References/Digital Profile - Bibliography.tsv').toString().tr
   var columns = line.replace(/(\r\n|\n|\r)/gm,"").split('\t')
 
   for (var i = 0; i < group5.length; i++) {
-      if(group5[i].group == 5 && columns[0] == group5[i].reference){
+      if(columns[0] == group5[i].reference){
           group5[i].reference.push(columns[1])
       }
     }
