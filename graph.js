@@ -155,23 +155,22 @@ var color = d3.scaleOrdinal()
       })
 
       node.on("mouseover", function(d, i){
-        // find all the nodes connected to this one
-        // console.log(i);
-        // console.log(d);
         d3.select(this).style("stroke", "red");
-        link.style('stroke', function(l) {
 
+        link.style('stroke', function(l) {
           if (d === l.source || d === l.target)
             return '#FF0000';
           });
-        if(d.text.indexOf('<>')!==-1){
-          d.text = d.text.split("<>")
-          d.year = d.year.split(",")
-          d.text = d.year[0]+": "+d.text[0]+'\n'+d.year[1].trim()+":"+d.text[1]
+        var dtext = d.text[0]
+        var dyear
+        if(d.text[0].indexOf('<>') !== -1){
+          dtext = d.text[0].split("<>")
+          d.year.indexOf(',') !== -1 ? dyear = d.year.split(",") : dyear = ["0000", "0000"]
+          dtext = dyear[0]+": "+dtext[0]+'\n'+dyear[1].trim()+":"+dtext[1]
           }
         return   tooltip.style("visibility", "visible")
                  .attr("class", 'tooltip')
-                 .text(d.text);
+                 .text(dtext);
       })
       node.on("mouseout", function(d){
         d3.select(this).style("stroke", "#fff");
@@ -226,28 +225,21 @@ var color = d3.scaleOrdinal()
         var year = ''
         var tags = node.tags[0];
 
-        if(node.text.indexOf('<>') !== -1){
-          console.log('test')
+        if(node.text[0].indexOf("<>") !== -1){
+          node.text = node.text[0].split("<>")
+          node.year = node.year.split(",")
+
+          for (var i = 0; i < node.text.length; i++) {
+            if(!node.year[i]) node.year[i] = '0'
+            nodeText += node.year[i].trim()+": "+node.text[i]+'<br>'
+            refNo += node.references[i].number+ ' '
+            refText += node.references[i].text+'<br>'
+          }
+        }else{
+          nodeText = node.text[0]
+          refNo =  node.references[0].number
+          refText = node.references[0].text
         }
-        //   alert('wga')
-        //   console.log("HEYY");
-        //   node.text = node.text.split("<>")
-        //   node.year = node.year.split(",")
-        //
-        //   for (var i = 0; i < node.text.length; i++) {
-        //     if(!node.year[i]) node.year[i] = '0'
-        //     nodeText += node.year[i].trim()+": "+node.text[i]+'<br>'
-        //   }
-        //   for (var i = 0; i < node.references.length; i++) {
-        //     refNo += node.references[i].number+ ' '
-        //     refText += node.references[i].text+ '<br>'
-        //   }
-        //   console.log('refno: '+refNo+' refText: '+ refText);
-        // }else{
-        //   nodeText = node.text
-        //   refNo =  node.references[0].number
-        //   refText = node.references[0].text
-        // }
 
         if(node.year>1) year = node.year;
 
@@ -260,9 +252,9 @@ var color = d3.scaleOrdinal()
         }
 
         if(refsVisible){
-          dataText += '<div class="refs"><p class="ref-number refId'+node.index+'">['+refNo+']</p> <p class="ref-text refId'+node.index+'">['+refText+'] '+year+' </p></div>'
+          dataText += '<div class="refs"><p class="ref-number refId'+node.index+'">['+refNo+']</p> <p class="ref-text refId'+node.index+'">'+refText+' '+year+' </p></div>'
         }else {
-          dataText += '<div class="refs hidden"><p class="ref-number refId'+node.index+'">['+refNo+']</p> <p class="ref-text refId'+node.index+'"> ['+refText+'] '+year+' </p></div>'
+          dataText += '<div class="refs hidden"><p class="ref-number refId'+node.index+'">['+refNo+']</p> <p class="ref-text refId'+node.index+'"> '+refText+' '+year+' </p></div>'
         }
         dataList.innerHTML += '<li>'+dataText+'</li>'
       }
