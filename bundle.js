@@ -25,7 +25,7 @@ document.addEventListener('click', function (e) {
     }
   };
 })
-// 
+//
 function toggleDisplay(e) {
   if(e.target.id=="toggleTags"){
     tagsSwitch(tagsVisible)
@@ -165,6 +165,12 @@ var color = d3.scaleOrdinal()
           if (d === l.source || d === l.target)
             return '#FF0000';
           });
+        if(d.text.indexOf('<>')>-1){
+          d.text = d.text.split("<>")
+          d.year = d.year.split(",")
+          d.text = d.year[0]+": "+d.text[0]+'\n'+d.year[1].trim()+":"+d.text[1]
+          }
+        console.log(d.year)
         return   tooltip.style("visibility", "visible")
                  .attr("class", 'tooltip')
                  .text(d.text);
@@ -216,8 +222,13 @@ var color = d3.scaleOrdinal()
     function addNodes(node) { // IF tags are not on, and new nodes are added, how to have nodes be consistent with this?
   console.log(node);
       if(node.group == 5) {
+        if(node.text.indexOf('<>')>-1){
+          node.text = node.text.split("<>")
+          node.year = node.year.split(",")
+          node.text = node.year[0]+": "+node.text[0]+'<br>'+node.year[1].trim()+":"+node.text[1]
+          }
             var tags = node.tags[0];
-            var refs = node.reference;
+            var refs = [node.references[0].number, node.references[0].text];
             var year = '';
         if(node.year>1) year = node.year;
 
@@ -239,6 +250,11 @@ var color = d3.scaleOrdinal()
     }
 
   })
+  function formatDoubleDataPoint(node) {
+    console.log(node.reference);
+    return node
+
+  }
 
 
 });
