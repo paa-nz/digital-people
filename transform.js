@@ -10,7 +10,7 @@ var DigitalPeople = output;
       var child; // change to parent
       for (var i = 1; i <= columns.length; i++) {
         !columns[i] ? child = columns[i-1] : child = columns[i]
-        output += ' { "group": '+i+', "text":"'+(columns[i-1])+'", "tags":['+JSON.stringify(child)+'] }, \n'
+        output += ' { "group": '+i+', "text":['+JSON.stringify(columns[i-1])+'], "tags":['+JSON.stringify(child)+'] }, \n'
       }
   });
 
@@ -42,7 +42,7 @@ var dataPoints = ""
       }
     }
     for (var i = 0; i < tags.length; i++) {
-    dataPoints += '{"group": 5, "text":"'+(columns[2])+'", "references":['+referenceStr+'], "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
+    dataPoints += '{"group": 5, "text":['+JSON.stringify(columns[2])+'], "references":['+referenceStr+'], "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
     }
   })
 // Check if column[0] has a comma, indicating more than one reference.
@@ -98,7 +98,7 @@ output = '{ "nodes": '+output+' , "links": '+JSON.stringify(createLinks(output))
 
 function merge(grouping) {
     for (var i=1; i< grouping.length;)          {   // every node {} in the arr
-      if(grouping[i].text === grouping[i-1].text){
+      if(grouping[i].text[0] === grouping[i-1].text[0]){
         for (var j = 0; j < grouping[i].tags.length; j++) {   // for the first nodes tags
           grouping[i-1].tags.push(grouping[i].tags[j])    // add them to the 2nd nodes tags
         }
