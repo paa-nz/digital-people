@@ -69,6 +69,7 @@ h2{
 }
 
 div.tooltip {
+    white-space: pre-wrap;
      position: absolute;
      text-align: left;
      padding: 8px;

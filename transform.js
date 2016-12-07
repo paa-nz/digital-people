@@ -19,6 +19,16 @@ var dataPoints = ""
   fs.readFileSync('./Digital Profile/Digital Profile - Digital Profile.tsv').toString().trim().split('\n').forEach(function (line) { //Then data
 
     var columns = line.split('\t');
+    var referenceStr = ''
+    if(columns[0].indexOf(',')>-1){
+      var multiReference = columns[0].split(',')
+      for (var i = 0; i < multiReference.length; i++) {
+        referenceStr+= '{"number":'+ multiReference[i]+'},'
+      }
+      referenceStr = referenceStr.replace(/,(?=[^,]*$)/, '')
+    }else{
+      referenceStr = '{"number":'+ columns[0]+'}'
+    }
 
     if(!columns[1]){
       columns[1] = 0;
@@ -32,11 +42,11 @@ var dataPoints = ""
       }
     }
     for (var i = 0; i < tags.length; i++) {
-    dataPoints += '{"group": 5, "text":"'+(columns[2])+'", "reference":["'+(columns[0])+'"], "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
+    dataPoints += '{"group": 5, "text":"'+(columns[2])+'", "references":['+referenceStr+'], "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
     }
   })
 // Check if column[0] has a comma, indicating more than one reference.
-// For each reference, add a new object to the "reference" array i.e reference: [{ {number: {123} }]
+// For each reference, add a new object to the "reference" array i.e references: [{ {number: {123} }]
 // Where the references are added, change so it adds a property like "text": {"J. Bloggs 2012"}
 //  so it looks like:
 // references: [ { number: { 1}, text: {dsaf} },
@@ -73,11 +83,13 @@ group3 = merge(group3)
 fs.readFileSync('./References/Digital Profile - Bibliography.tsv').toString().trim().split('\n').forEach(function(line) {
   var columns = line.replace(/(\r\n|\n|\r)/gm,"").split('\t')
 
-  for (var i = 0; i < group5.length; i++) {
-      if(columns[0] == group5[i].reference){
-          group5[i].reference.push(columns[1])
+  for (var i = 0; i < group5.length; i++) { // for l of g5
+    for (var j = 0; j < group5[i].references.length; j++) { // for every
+      if(columns[0] == group5[i].references[j].number){
+          group5[i].references[j].text = columns[1]
       }
     }
+  }
 })
 
 output = JSON.stringify(group0.concat(group1, group2, group3, group5)); // an array of the nodes and datapoints.
