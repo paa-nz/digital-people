@@ -225,7 +225,7 @@ var color = d3.scaleOrdinal()
         if(node.text.indexOf('<>')>-1){
           node.text = node.text.split("<>")
           node.year = node.year.split(",")
-          node.text = node.year[0]+": "+node.text[0]+'\n'+node.year[1].trim()+":"+node.text[1]
+          node.text = node.year[0]+": "+node.text[0]+'<br>'+node.year[1].trim()+":"+node.text[1]
           }
             var tags = node.tags[0];
             var refs = [node.references[0].number, node.references[0].text];
