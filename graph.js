@@ -100,9 +100,9 @@ var color = d3.scaleOrdinal()
 
     var simulation =
         d3.forceSimulation()
-        .force("charge", d3.forceManyBody().strength(-50))
+        .force("charge", d3.forceManyBody().strength(function(d) {return d.group * -10}))
         .force("collide", d3.forceCollide().radius(function (d) {
-                        if(d.group==0){return 48}
+                        if(d.group==10){return 48}
                         else{return 15 - d.group}
                         }).strength(2).iterations(2))
         .force("link", d3.forceLink().id(function(d, i) { return i;}).distance(20).strength(0.9))
@@ -130,12 +130,12 @@ var color = d3.scaleOrdinal()
       .enter().append("circle")
         .attr("id", function(d, i) { return 'c'+i})
         .attr("r",function(d) {
-              if(d.group==0) {return 40}
+              if(d.group==10) {return 40}
               else{
                 return radius}
               })
         .style("fill", function(d) {
-              if(d.group==0) {return "url(#vit-icon)";}
+              if(d.group==10) {return "url(#vit-icon)";}
               else {return color(d.group); }
             })
       .call(d3.drag()
@@ -156,6 +156,8 @@ var color = d3.scaleOrdinal()
 
       node.on("mouseover", function(d, i){
         d3.select(this).style("stroke", "red");
+        console.log(graph.nodes.length);
+        console.log(graph.links.length);
 
         link.style('stroke', function(l) {
           if (d === l.source || d === l.target)
