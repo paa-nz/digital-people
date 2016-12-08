@@ -155,24 +155,22 @@ var color = d3.scaleOrdinal()
       })
 
       node.on("mouseover", function(d, i){
-        // find all the nodes connected to this one
-        // console.log(i);
-        // console.log(d);
         d3.select(this).style("stroke", "red");
-        link.style('stroke', function(l) {
 
+        link.style('stroke', function(l) {
           if (d === l.source || d === l.target)
             return '#FF0000';
           });
-        if(d.text.indexOf('<>')>-1){
-          d.text = d.text.split("<>")
-          d.year = d.year.split(",")
-          d.text = d.year[0]+": "+d.text[0]+'\n'+d.year[1].trim()+":"+d.text[1]
+        var dtext = d.text[0]
+        var dyear
+        if(d.text[0].indexOf('<>') !== -1){
+          dtext = d.text[0].split("<>")
+          d.year.indexOf(',') !== -1 ? dyear = d.year.split(",") : dyear = ["0000", "0000"]
+          dtext = dyear[0]+": "+dtext[0]+'\n'+dyear[1].trim()+":"+dtext[1]
           }
-        console.log(d.year)
         return   tooltip.style("visibility", "visible")
                  .attr("class", 'tooltip')
-                 .text(d.text);
+                 .text(dtext);
       })
       node.on("mouseout", function(d){
         d3.select(this).style("stroke", "#fff");
@@ -219,19 +217,33 @@ var color = d3.scaleOrdinal()
     }
 
     function addNodes(node) { // IF tags are not on, and new nodes are added, how to have nodes be consistent with this?
-  console.log(node);
       if(node.group == 5) {
-        if(node.text.indexOf('<>')>-1){
-          node.text = node.text.split("<>")
-          node.year = node.year.split(",")
-          node.text = node.year[0]+": "+node.text[0]+'<br>'+node.year[1].trim()+":"+node.text[1]
+        console.log('NODE: ',node);
+        var nodeText = ''
+        var refNo = ''
+        var refText = ''
+        var year = ''
+        var tags = node.tags[0];
+
+        if(node.text[0].indexOf("<>") !== -1){
+          var nodeTextArr = node.text[0].split("<>")
+          var nodeYearArr = node.year.split(",")
+
+          for (var i = 0; i < nodeTextArr.length; i++) {
+            if(!nodeYearArr[i]) nodeYearArr[i] = '0'
+            nodeText += nodeYearArr[i].trim()+": "+nodeTextArr[i]+'<br>'
+            refNo += node.references[i].number+ ' '
+            refText += node.references[i].text+'<br>'
           }
-            var tags = node.tags[0];
-            var refs = [node.references[0].number, node.references[0].text];
-            var year = '';
+        }else{
+          nodeText = node.text[0]
+          refNo =  node.references[0].number
+          refText = node.references[0].text
+        }
+
         if(node.year>1) year = node.year;
 
-        var dataText = '<p class="datum">'+node.text+' </p>'
+        var dataText = '<p class="datum">'+nodeText+' </p>'
 
         if(tagsVisible){
           dataText += '<p class="tags">('+tags+')</>'
@@ -240,20 +252,14 @@ var color = d3.scaleOrdinal()
         }
 
         if(refsVisible){
-          dataText += '<div class="refs"><p class="ref-number refId'+node.index+'">['+refs[0]+']</p> <p class="ref-text refId'+node.index+'">['+refs[1]+'] '+year+' </p></div>' // add click handler
+          dataText += '<div class="refs"><p class="ref-number refId'+node.index+'">['+refNo+']</p> <p class="ref-text refId'+node.index+'">'+refText+' '+year+' </p></div>'
         }else {
-          dataText += '<div class="refs hidden"><p class="ref-number refId'+node.index+'">['+refs[0]+']</p> <p class="ref-text refId'+node.index+'"> ['+refs[1]+'] '+year+' </p></div>'
+          dataText += '<div class="refs hidden"><p class="ref-number refId'+node.index+'">['+refNo+']</p> <p class="ref-text refId'+node.index+'"> '+refText+' '+year+' </p></div>'
         }
         dataList.innerHTML += '<li>'+dataText+'</li>'
       }
     }
 
   })
-  function formatDoubleDataPoint(node) {
-    console.log(node.reference);
-    return node
-
-  }
-
 
 });

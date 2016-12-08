@@ -1,22 +1,39 @@
 var fs  = require("fs");
 
-var output = '{ "nodes":[{ "group": 0, "text":"Digital People", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },\n'
+var output = '{ "nodes":[{ "group": 0, "text":"Digital People", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },\n' // array shift or w/e this to top?
 var DigitalPeople = output;
 
-  fs.readFileSync('./Tags/tags.tsv').toString().trim().split('\n').forEach(function (line) { //First read tags
-      var columns = line.replace(/(\r\n|\n|\r)/gm,"").split('\t')
-      columns = columns.filter(function(entry) { return entry.trim() != ''; }); // add to above .split
-
-      var child; // change to parent
-      for (var i = 1; i <= columns.length; i++) {
-        !columns[i] ? child = columns[i-1] : child = columns[i]
-        output += ' { "group": '+i+', "text":"'+(columns[i-1])+'", "tags":['+JSON.stringify(child)+'] }, \n'
-      }
+  // fs.readFileSync('./Data/tags.tsv').toString().trim().split('\n').forEach(function (line) { //First read tags
+  //     var columns = line.replace(/(\r\n|\n|\r)/gm,"").split('\t')
+  //     columns = columns.filter(function(entry) { return entry.trim() != ''; }); // add to above .split
+  //     console.log(line);
+  //     var parent;
+  //     for (var i = 1; i <= columns.length; i++) {
+  //       !columns[i] ? parent = columns[i-1] : parent = columns[i]
+  //       output += ' { "group": '+i+', "text":['+JSON.stringify(columns[i-1])+'], "tags":['+JSON.stringify(parent)+'] }, \n'
+  //     }
+  // });
+  var Tags = ''
+  var parent;
+  var child
+  var grandchild
+  fs.readFileSync('./Data/Digital Profile - Tags.tsv').toString().trim().split('\n').forEach(function (line) { //First read tags
+   var columns = line.replace(/(\r\n|\n|\r)/gm,"").split('\t')
+   if(columns[0]) {
+     parent = columns[0]
+     output += ' { "group": 1, "text":['+JSON.stringify(parent)+'], "tags":['+JSON.stringify(parent)+'] },'
+     }
+   if(columns[1]) { child = columns[1]
+     output += ' { "group": 2, "text":['+JSON.stringify(child)+'], "tags":['+JSON.stringify(parent)+'] }, '
+     }
+   if(columns[2]) { grandchild = columns[2]
+     output += ' { "group": 3, "text":['+JSON.stringify(grandchild)+'], "tags":['+JSON.stringify(child)+'] }, '
+     }
   });
 
 var dataPoints = ""
 
-  fs.readFileSync('./Digital Profile/Digital Profile - Digital Profile.tsv').toString().trim().split('\n').forEach(function (line) { //Then data
+  fs.readFileSync('./Data/Digital Profile - Digital Profile.tsv').toString().trim().split('\n').forEach(function (line) { //Then data
 
     var columns = line.split('\t');
     var referenceStr = ''
@@ -42,18 +59,9 @@ var dataPoints = ""
       }
     }
     for (var i = 0; i < tags.length; i++) {
-    dataPoints += '{"group": 5, "text":"'+(columns[2])+'", "references":['+referenceStr+'], "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
+    dataPoints += '{"group": 5, "text":['+JSON.stringify(columns[2])+'], "references":['+referenceStr+'], "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
     }
   })
-// Check if column[0] has a comma, indicating more than one reference.
-// For each reference, add a new object to the "reference" array i.e references: [{ {number: {123} }]
-// Where the references are added, change so it adds a property like "text": {"J. Bloggs 2012"}
-//  so it looks like:
-// references: [ { number: { 1}, text: {dsaf} },
-//               { number: {3}, text: {sdf} },
-//             ]
-// Sort out how the node.text is displayed in the graph.js. Insert <br> if <> is in node.text string.
-
 
 output += dataPoints+'          ] }'
 output = output.replace(/,(?=[^,]*$)/, '')
@@ -80,11 +88,11 @@ group1 = merge(group1)
 group2 = merge(group2)
 group3 = merge(group3)
 
-fs.readFileSync('./References/Digital Profile - Bibliography.tsv').toString().trim().split('\n').forEach(function(line) {
+fs.readFileSync('./Data/Digital Profile - Bibliography.tsv').toString().trim().split('\n').forEach(function(line) {
   var columns = line.replace(/(\r\n|\n|\r)/gm,"").split('\t')
 
-  for (var i = 0; i < group5.length; i++) { // for l of g5
-    for (var j = 0; j < group5[i].references.length; j++) { // for every
+  for (var i = 0; i < group5.length; i++) {
+    for (var j = 0; j < group5[i].references.length; j++) {
       if(columns[0] == group5[i].references[j].number){
           group5[i].references[j].text = columns[1]
       }
@@ -98,7 +106,7 @@ output = '{ "nodes": '+output+' , "links": '+JSON.stringify(createLinks(output))
 
 function merge(grouping) {
     for (var i=1; i< grouping.length;)          {   // every node {} in the arr
-      if(grouping[i].text === grouping[i-1].text){
+      if(grouping[i].text[0] === grouping[i-1].text[0]){
         for (var j = 0; j < grouping[i].tags.length; j++) {   // for the first nodes tags
           grouping[i-1].tags.push(grouping[i].tags[j])    // add them to the 2nd nodes tags
         }
@@ -154,7 +162,7 @@ function removeDups(a){ // possible not any actual duplicates.
           }
       }
   return a;
-  }
+}
 
 
 fs.appendFileSync("./tempoutput.json", output);
