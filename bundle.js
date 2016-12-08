@@ -157,9 +157,6 @@ var color = d3.scaleOrdinal()
 
       node.on("mouseover", function(d, i){
         d3.select(this).style("stroke", "red");
-        console.log(graph.nodes.length);
-        console.log(graph.links.length);
-
         link.style('stroke', function(l) {
           if (d === l.source || d === l.target)
             return '#FF0000';
@@ -219,9 +216,9 @@ var color = d3.scaleOrdinal()
         d.fy = null;
     }
 
-    function addNodes(node) { // IF tags are not on, and new nodes are added, how to have nodes be consistent with this?
-      if(node.group == 5) {
-        console.log('NODE: ',node);
+    function addNodes(node) {
+      console.log('NODE: ',node);
+      if(node.group == 8) {
         var nodeText = ''
         var refNo = ''
         var refText = ''
