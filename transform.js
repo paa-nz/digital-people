@@ -1,19 +1,6 @@
 var fs  = require("fs");
 
-var output = '{ "nodes":[{ "group": 0, "text":"Digital People", "tags":["People","Digital literacy","Digital consumption","Online skills","Visual perception / information visualisation","Cognitive processing","Social ties / social network","Social behaviour / social networking","Workplace connectivity","Quantified workplace","Electronic collaboration","Quantified self / self-tracking","Extended self","Digital footprint","Digital neighbourhood","Privacy and digital surveillance","Personality traits","Physical disorders","Impact of computerisation","Diversity"] },\n' // array shift or w/e this to top?
-var DigitalPeople = output;
-
-  // fs.readFileSync('./Data/tags.tsv').toString().trim().split('\n').forEach(function (line) { //First read tags
-  //     var columns = line.replace(/(\r\n|\n|\r)/gm,"").split('\t')
-  //     columns = columns.filter(function(entry) { return entry.trim() != ''; }); // add to above .split
-  //     console.log(line);
-  //     var parent;
-  //     for (var i = 1; i <= columns.length; i++) {
-  //       !columns[i] ? parent = columns[i-1] : parent = columns[i]
-  //       output += ' { "group": '+i+', "text":['+JSON.stringify(columns[i-1])+'], "tags":['+JSON.stringify(parent)+'] }, \n'
-  //     }
-  // });
-  var Tags = ''
+var output = '[ '
   var parent;
   var child
   var grandchild
@@ -63,24 +50,24 @@ var dataPoints = ""
     }
   })
 
-output += dataPoints+'          ] }'
+output += dataPoints+'          ] '
 output = output.replace(/,(?=[^,]*$)/, '')
 
 var x = JSON.parse(output); //Have to parse to use in JS, to remove duplicates.
 
-var group1 = x.nodes.filter(function(node){
+var group1 = x.filter(function(node){
     return (node.group == 1);
 })
-var group2 = x.nodes.filter(function(node){
+var group2 = x.filter(function(node){
     return (node.group == 2);
 })
-var group3 = x.nodes.filter(function(node){
+var group3 = x.filter(function(node){
     return (node.group == 3);
 })
-var group5 = x.nodes.filter(function(node){
+var group5 = x.filter(function(node){
     return (node.group == 5);
 })
-var group0 = x.nodes.filter(function(node){
+var group0 = x.filter(function(node){
     return (node.group == 0);
 })
 
@@ -99,10 +86,26 @@ fs.readFileSync('./Data/Digital Profile - Bibliography.tsv').toString().trim().s
     }
   }
 })
-
-output = JSON.stringify(group0.concat(group1, group2, group3, group5)); // an array of the nodes and datapoints.
+var g0 = createCentralNode(group1)
+output = JSON.stringify(group0.concat(g0, group1, group2, group3, group5)); // an array of the nodes and datapoints.
 
 output = '{ "nodes": '+output+' , "links": '+JSON.stringify(createLinks(output)) +'}'
+
+function createCentralNode(tagNodes) {
+  var DigitalPeople = { group: 0, text: 'Digital People'}
+  var tags = []
+  var flattened = []
+  for (var i = 0; i < tagNodes.length; i++) {
+    if(tagNodes[i].group == 1){
+      tags.push(tagNodes[i].text)
+    }
+  }
+  for(var i = 0; i < tags.length; i++) {
+    flattened = flattened.concat(tags[i]);
+  }
+  DigitalPeople.tags = flattened
+  return DigitalPeople
+}
 
 function merge(grouping) {
     for (var i=1; i< grouping.length;)          {   // every node {} in the arr
