@@ -226,12 +226,12 @@ var color = d3.scaleOrdinal()
         var tags = node.tags[0];
 
         if(node.text[0].indexOf("<>") !== -1){
-          node.text = node.text[0].split("<>")
-          node.year = node.year.split(",")
+          var nodeTextArr = node.text[0].split("<>")
+          var nodeYearArr = node.year.split(",")
 
-          for (var i = 0; i < node.text.length; i++) {
-            if(!node.year[i]) node.year[i] = '0'
-            nodeText += node.year[i].trim()+": "+node.text[i]+'<br>'
+          for (var i = 0; i < nodeTextArr.length; i++) {
+            if(!nodeYearArr[i]) nodeYearArr[i] = '0'
+            nodeText += nodeYearArr[i].trim()+": "+nodeTextArr[i]+'<br>'
             refNo += node.references[i].number+ ' '
             refText += node.references[i].text+'<br>'
           }
