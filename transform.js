@@ -46,7 +46,7 @@ var dataPoints = ""
       }
     }
     for (var i = 0; i < tags.length; i++) {
-    dataPoints += '{"group": 5, "text":['+JSON.stringify(columns[2])+'], "references":['+referenceStr+'], "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
+    dataPoints += '{"group": 8, "text":['+JSON.stringify(columns[2])+'], "references":['+referenceStr+'], "year": "'+columns[1]+'",  "tags":['+(tags[i])+']},'
     }
   })
 
@@ -65,7 +65,7 @@ var group3 = x.filter(function(node){
     return (node.group == 3);
 })
 var group5 = x.filter(function(node){
-    return (node.group == 5);
+    return (node.group == 8);
 })
 var group0 = x.filter(function(node){
     return (node.group == 0);
@@ -86,13 +86,13 @@ fs.readFileSync('./Data/Digital Profile - Bibliography.tsv').toString().trim().s
     }
   }
 })
-var g0 = createCentralNode(group1)
-output = JSON.stringify(group0.concat(g0, group1, group2, group3, group5)); // an array of the nodes and datapoints.
+var centralNode = createCentralNode(group1)
+output = JSON.stringify(group0.concat(centralNode, group1, group2, group3, group5)); // an array of the nodes and datapoints.
 
 output = '{ "nodes": '+output+' , "links": '+JSON.stringify(createLinks(output)) +'}'
 
 function createCentralNode(tagNodes) {
-  var DigitalPeople = { group: 0, text: 'Digital People'}
+  var DigitalPeople = { group: 10, text: ['Digital People']}
   var tags = []
   var flattened = []
   for (var i = 0; i < tagNodes.length; i++) {
@@ -136,12 +136,14 @@ function createLinks(nodes){
       }
     }
   }
+  console.log(rawLinks.length);
 
-  for (var i=0; i< nodes.length; i++){ // perhaps adapt to other groups.
-    if(nodes[i].group == 1){
-      rawLinks.push({"source": 0,"target":i})
-    }
-  }
+  console.log(removeDups(rawLinks).length);
+  // for (var i=0; i< nodes.length; i++){ // perhaps adapt to other groups.
+  //   if(nodes[i].group == 1){
+  //     rawLinks.push({"source": 0,"target":i})
+  //   }
+  // }
   return removeDups(rawLinks); // return removeDups
 }
 
