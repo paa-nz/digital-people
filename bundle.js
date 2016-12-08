@@ -83,7 +83,7 @@ var color = d3.scaleOrdinal()
           .range(["#703030", "#2F343B" , "#7E827A", "#E3CDA4", "#C77966"]);;
 
 
-  d3.json("./tempoutput.json", function(json) {
+  d3.json("./Data/output.json", function(json) {
     var graph = json
 
     var defs = svg.append('svg:defs');
@@ -101,7 +101,7 @@ var color = d3.scaleOrdinal()
 
     var simulation =
         d3.forceSimulation()
-        .force("charge", d3.forceManyBody().strength(function(d) {return d.group * -10}))
+        .force("charge", d3.forceManyBody().strength(function(d) {return d.group * -11}))
         .force("collide", d3.forceCollide().radius(function (d) {
                         if(d.group==10){return 48}
                         else{return 15 - d.group}

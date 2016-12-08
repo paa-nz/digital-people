@@ -3,7 +3,10 @@ A visual profile of people in the digital age.
 
 
 ##Instructions.
-* I have changed the tags spreadsheet slightly to make it easier to format. Check 'EditedTags.tsv' for an example.
-* Download the latest sheets of the tags and datapoints as a tab separated value (.tsv) file.
-* Run EditedTags.tsv through transform.js by typing ' node transform.js EditedTags.tsv' in the console.
-* This results in 'output.json', which is the file graph.js uses to build the graph.
+* Navigate to the folder containing this program in terminal.
+* Type 'npm i' to install.
+* Download the latest sheets of the datapoints, tags and references as tab separated value (.tsv) files. They should be titled 'Digital Profile - Bibliography.tsv' etc.
+* Place them in the Data folder.
+* Run them through transform.js by typing 'node transform.js' in the terminal.
+* This creates 'output.json' in the Data folder, which is the file graph.js uses to build the graph.
+* To see the graph at localhost:8080 on your browser, type 'npm run server' in the terminal.

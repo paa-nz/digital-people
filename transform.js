@@ -136,14 +136,7 @@ function createLinks(nodes){
       }
     }
   }
-  console.log(rawLinks.length);
 
-  console.log(removeDups(rawLinks).length);
-  // for (var i=0; i< nodes.length; i++){ // perhaps adapt to other groups.
-  //   if(nodes[i].group == 1){
-  //     rawLinks.push({"source": 0,"target":i})
-  //   }
-  // }
   return removeDups(rawLinks); // return removeDups
 }
 
@@ -170,4 +163,4 @@ function removeDups(a){ // possible not any actual duplicates.
 }
 
 
-fs.appendFileSync("./tempoutput.json", output);
+fs.appendFileSync("./Data/output.json", output);
